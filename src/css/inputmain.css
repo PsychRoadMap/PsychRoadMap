@@ -18,6 +18,15 @@ PHONE SCREEN
     background-color: #9f8d55;
   }
 
+  .secondary {
+    background-color: #0B5A4E;
+    color: white;
+  }
+
+  a.secondary:hover {
+    background-color: #074137;
+  }
+
   body {
     background-color: #EDEBE5 !important;
     overflow-x: hidden;
@@ -124,17 +133,28 @@ PHONE SCREEN
   }
 
   .select-text input {
-    color: #b5a36a;
+    color: #0B5A4E;
     width: 20px;
     height: 20px;
-    accent-color: #b5a36a;
+    accent-color: #0B5A4E;
     margin-right: 1em;
   }
 
   .select-text input:checked {
-    color: #b5a36a;
-    accent-color: #b5a36a;
+    color: #0B5A4E;
+    accent-color: #0B5A4E;
   }
+
+  input:focus { 
+    outline: none !important;
+    border-color: #0B5A4E;
+    box-shadow: 0 0 10px #6fbeb3;
+}
+textarea:focus { 
+    outline: none !important;
+    border-color: #0B5A4E;
+    box-shadow: 0 0 10px #6fbeb3;
+}
 
   .getStarted {
     min-width: 40vw;
@@ -168,6 +188,14 @@ PHONE SCREEN
     border-color: #E9E5D6;
   }
 
+  .section button {
+    background-color: white;
+  }
+
+  .section button svg {
+    fill: #0B5A4E;
+  }
+
   .card {
     background-color: white;
     max-width: 90vw;
@@ -191,8 +219,12 @@ PHONE SCREEN
     border-color: #E9E5D6;
   }
 
+  h2+svg {
+    fill: #0B5A4E;
+  }
+
   .waiting {
-    background-image: url(../assets/waiting.svg);
+    background-image: url(../assets/waiting-g.svg);
     background-position: center center;
     background-origin: content-box;
     background-size: contain;
@@ -204,12 +236,15 @@ PHONE SCREEN
   }
 
   div.divide-y, div.divide-y div.p-5 {
+    background-color: white;
     border: 0px;
   }
 
   footer {
     background-color: #1D1D1D;
     min-height: 3vh;
+    border-top: solid #0B5A4E;
+    border-top-width: 1rem;
   }
 
   footer a {
@@ -263,7 +298,7 @@ COMPUTER SCREEN
   }
 
   .jumbito-img {
-    background-image: url("../assets/projections-cropped.svg");
+    background-image: url("../assets/projections-g.svg");
     background-color: #1D1D1D;
     background-position: center center;
     background-origin: content-box;
@@ -278,11 +313,11 @@ COMPUTER SCREEN
   }
 
   .mission.jumbito-img {
-    background-image: url("../assets/books.svg");
+    background-image: url("../assets/books-g2.svg");
   }
 
   .about.jumbito-img {
-    background-image: url("../assets/data.svg");
+    background-image: url("../assets/data-g.svg");
   }
 
   p.jumbito-text {

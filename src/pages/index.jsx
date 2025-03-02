@@ -12,7 +12,7 @@ const Index = () => {
           <div class="flex flex-row justify-content-center align-items-center mask">
 
             <div class="flex flex-row justify-center align-items-center">
-              <Link reloadDocument to="/select" class="block rounded-xl lg:my-auto lg:w-100 w-60 my-20 lg:ml-20 px-5 py-20 text-gray-700 text-4xl bg-white hover:bg-gray-200 border-b border-gray-100 lg:border-0 text-center getStarted">GET STARTED</Link>
+              <Link to="/select" class="secondary block rounded-xl lg:my-auto lg:w-100 w-60 my-20 lg:ml-20 px-5 py-20 text-gray-700 text-4xl bg-white hover:bg-gray-200 border-b border-gray-100 lg:border-0 text-center getStarted"><b>GET STARTED</b></Link>
             </div>
           </div>
         </div>
