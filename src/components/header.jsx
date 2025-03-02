@@ -34,10 +34,10 @@ function Header() {
                           <Link reloadDocument to="/select" class="block lg:w-50 lg:px-5 lg:py-5 text-gray-700 text-2xl gold border-b border-gray-100 lg:border-0 text-center"><b>APP</b></Link>
                       </li>
                       <li>
-                          <a href="#" class="block lg:w-50 lg:px-5 lg:py-5 text-gray-700 text-2xl gold border-b border-gray-100 lg:border-0 text-center"><b>MISSION</b></a>
+                        <Link to="/mission" class="block lg:w-50 lg:px-5 lg:py-5 text-gray-700 text-2xl gold border-b border-gray-100 lg:border-0 text-center"><b>MISSION</b></Link>
                       </li>
                       <li>
-                          <a href="#" class="block lg:w-50 lg:px-5 lg:py-5 text-gray-700 text-2xl gold border-b border-gray-100 lg:border-0 text-center"><b>ABOUT</b></a>
+                        <Link to="/about" class="block lg:w-50 lg:px-5 lg:py-5 text-gray-700 text-2xl gold border-b border-gray-100 lg:border-0 text-center"><b>ABOUT</b></Link>
                       </li>
                   </ul>
               </div>
