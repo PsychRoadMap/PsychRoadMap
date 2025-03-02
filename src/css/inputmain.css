@@ -86,7 +86,7 @@ PHONE SCREEN
     margin-left: 4vw;
   }
 
-  .select-text {
+  t-text {
     width: 100vw;
     background-color: white;
     padding-bottom: 3vh;
@@ -190,6 +190,18 @@ PHONE SCREEN
     border-color: #E9E5D6;
   }
 
+  .waiting {
+    background-image: url(../assets/waiting.svg);
+    background-position: center center;
+    background-origin: content-box;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    image-resolution: from-image;
+    width: 100%;
+    min-height: 55vh;
+  }
+
   footer {
     background-color: #1D1D1D;
     min-height: 3vh;
@@ -258,6 +270,14 @@ COMPUTER SCREEN
     width: 85vw;
     height: 100%;
     max-height: 30vh;
+  }
+
+  .mission.jumbito-img {
+    background-image: url("../assets/books.svg");
+  }
+
+  .about.jumbito-img {
+    background-image: url("../assets/data.svg");
   }
 
   p.jumbito-text {

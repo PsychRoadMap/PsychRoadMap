@@ -27,7 +27,7 @@ const Select = () => {
       </div>
 
       {/* SELECTION SECTION */}
-      <div class="select-text">
+      <div class="select-text pb-10">
         <p class="lg:text-6xl text-3xl py-10"><b>Select your courses to get started!</b></p>
         <p class="text-base">
           Select all of the Psychology courses you have taken or plan to take as you work towards your degree.
