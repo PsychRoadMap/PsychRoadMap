@@ -1,0 +1,299 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+/*****  
+PHONE SCREEN
+******/
+
+@media (min-width: 0px) {
+
+  .gold {
+    background-color: #b5a36a;
+  }
+
+  a.gold:hover {
+    background-color: #9f8d55;
+  }
+
+  body {
+    background-color: #EDEBE5 !important;
+    overflow-x: hidden;
+    font-family: 'Hind Madurai', sans-serif;
+  }
+
+  body a {
+    text-decoration: none;
+    color: #494A4B;
+  }
+
+  .logo {
+    max-width: 25vw;
+    max-height: 25vw;
+  }
+
+  .logo-text>p {
+    max-width: 40vw;
+  }
+
+  li>a {
+    margin-left: -2vw;
+  }
+
+  span.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='4' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  .jumbito {
+    min-height: 7vh;
+  }
+
+  .jumbo-img {
+    background-image: url("../assets/stepping-up-cropped.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #1D1D1D;
+    background-position: center center;
+    background-origin: content-box;
+    min-height: 40vh;
+  }
+
+  .jumbito-img {
+    background-color: #1D1D1D;
+    min-height: 7vh;
+  }
+
+  p.jumbito-text {
+    margin-top: 1vh;
+  }
+
+  .mask {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+  }
+
+  .index-text {
+    width: 90vw;
+    margin: 0 5vw 0 5vw;
+    background-color: #E9E5D6;
+  }
+
+  .index-text>p {
+    color: #494A4B;
+    margin-right: 4vw;
+    margin-left: 4vw;
+  }
+
+  .select-text {
+    width: 100vw;
+    background-color: white;
+    padding-bottom: 3vh;
+  }
+
+  .select-text button {
+    width: 100%;
+  }
+
+  .select-text button.desc {
+    max-width: 3em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .select-text p {
+    color: #494A4B;
+    margin-right: 6vw;
+    margin-left: 6vw;
+  }
+
+  .select-text p.desc {
+    color: #494A4B;
+    margin-right: 0vw;
+    margin-left: 1vw;
+    font-size: small;
+  }
+
+  .select-text label {
+    color: #494A4B;
+    margin-right: 6vw;
+    text-align: start;
+    font-size: large;
+  }
+
+  .select-text input {
+    color: #b5a36a;
+    width: 20px;
+    height: 20px;
+    accent-color: #b5a36a;
+    margin-right: 1em;
+  }
+
+  .select-text input:checked {
+    color: #b5a36a;
+    accent-color: #b5a36a;
+  }
+
+  .getStarted {
+    min-width: 40vw;
+    margin-left: 20vw;
+    margin-right: 20vw;
+  }
+
+  .select-text p.gold {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .section {
+    border: solid;
+    border-bottom: 0px;
+    border-color: #E9E5D6;
+    margin-left: 6vw;
+    margin-right: 6vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+
+  .section.end-section {
+    border: solid;
+    border-bottom-width: medium;
+    border-color: #E9E5D6;
+  }
+
+  .card {
+    background-color: white;
+    max-width: 90vw;
+  }
+
+  .card>.card-title {
+    color:#494A4B;
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 1em;
+    background-color: #b5a36a;
+  }
+
+  .card>.card-job {
+    padding: 1em;
+    border: solid;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom-width: small;
+    border-color: #E9E5D6;
+  }
+
+  footer {
+    background-color: #1D1D1D;
+    min-height: 3vh;
+  }
+
+  footer a {
+    color: gray;
+  }
+
+}
+
+/***** 
+TABLET SCREEN
+*****/
+
+@media (min-width: 768px) {}
+
+
+/***** 
+COMPUTER SCREEN
+*****/
+
+@media (min-width: 1024px) {
+
+  li>a {
+    margin-left: 0vw;
+  }
+
+  .jumbo {
+    height: 55vh;
+    background-color: #1D1D1D;
+  }
+
+  .jumbito {
+    height: 25vh;
+    max-height: 25vh;
+    background-color: #1D1D1D;
+  }
+
+  .mask {
+    background-color: transparent;
+    height: 100%;
+    width: 0%;
+  }
+
+  .jumbo-img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    image-resolution: from-image;
+    padding-top: 5vh;
+    width: 85vw;
+    height: 100%;
+  }
+
+  .jumbito-img {
+    background-image: url("../assets/projections-cropped.svg");
+    background-color: #1D1D1D;
+    background-position: center center;
+    background-origin: content-box;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    image-resolution: from-image;
+    padding-top: 5vh;
+    width: 85vw;
+    height: 100%;
+    max-height: 30vh;
+  }
+
+  p.jumbito-text {
+    margin-top: 3vh;
+    margin-left: 20vw;
+  }
+
+  .getStarted {
+    min-width: 10vw;
+    margin-left: 25vw;
+  }
+
+  .index-text {
+    margin: 0 0 0 20vw;
+    width: 60vw;
+    background-color: #E9E5D6;
+    font-style: italic;
+    min-height: 30vh;
+  }
+
+  .index-text>p {
+    color: #494A4B;
+    margin-right: 2vw;
+    margin-left: 2vw;
+  }
+
+  .select-text {
+    margin: 0 0 0 20vw;
+    width: 60vw;
+    background-color: white;
+    min-height: 30vh;
+  }
+
+  .card {
+    max-width: 15vw;
+  }
+
+
+}
