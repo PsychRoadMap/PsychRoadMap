@@ -11,6 +11,7 @@ PHONE SCREEN
 
   .gold {
     background-color: #b5a36a;
+    border: 0px;
   }
 
   a.gold:hover {
@@ -200,6 +201,10 @@ PHONE SCREEN
     image-resolution: from-image;
     width: 100%;
     min-height: 55vh;
+  }
+
+  div.divide-y, div.divide-y div.p-5 {
+    border: 0px;
   }
 
   footer {

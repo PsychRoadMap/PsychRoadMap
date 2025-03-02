@@ -31,10 +31,10 @@ function Header() {
               <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                   <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                       <li>
-                          <Link reloadDocument to="/select" class="block lg:w-50 lg:px-5 lg:py-5 text-gray-700 text-2xl gold border-b border-gray-100 lg:border-0 text-center"><b>APP</b></Link>
+                          <Link to="/select" class="block lg:w-50 lg:px-5 lg:py-5 text-gray-700 text-2xl gold border-b border-gray-100 lg:border-0 text-center mb-0.5"><b>APP</b></Link>
                       </li>
                       <li>
-                        <Link to="/mission" class="block lg:w-50 lg:px-5 lg:py-5 text-gray-700 text-2xl gold border-b border-gray-100 lg:border-0 text-center"><b>MISSION</b></Link>
+                        <Link to="/mission" class="block lg:w-50 lg:px-5 lg:py-5 text-gray-700 text-2xl gold border-b border-gray-100 lg:border-0 text-center mb-0.5"><b>MISSION</b></Link>
                       </li>
                       <li>
                         <Link to="/about" class="block lg:w-50 lg:px-5 lg:py-5 text-gray-700 text-2xl gold border-b border-gray-100 lg:border-0 text-center"><b>ABOUT</b></Link>

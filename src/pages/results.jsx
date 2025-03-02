@@ -135,7 +135,7 @@ function Select() {
 
       <div className="my-5 button pb-10">
         <div class="flex justify-center align-items-center mt-10">
-          <Link reloadDocument to="/select" class="gold rounded-xl lg:my-auto lg:w-150 w-60 my-20 px-5 py-20 text-4xl text-center"><b>TRY A DIFFERENT PATH</b></Link>
+          <Link to="/select" class="gold rounded-xl lg:my-auto lg:w-150 w-60 my-20 px-5 py-20 text-4xl text-center"><b>TRY A DIFFERENT PATH</b></Link>
         </div>
       </div>
 
