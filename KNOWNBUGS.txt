@@ -5,7 +5,7 @@
   Routing to selection page disables accordion Javascript (or causes it to malfunction in some way).
   Page must be refreshed while select.jsx is rendered to enable Javascript.
   Would likely be fixed with proper use of useState() and useEffect(). Currently using reloadDocument hack, but would like to fix this correctly.
-  Problematic behavior is not present when using proper React Accordion component, but I cannot for the love of god get that fucker styled. 
+  Problematic behavior is not present when using proper React Accordion component, but I just cannot figure out how to get that thing styled consistently. 
   We will have to switch the proper component anyway once the database is in a usable state, so I have until then to figure the styling out.
 
 2/18 index.jsx
