@@ -156,6 +156,17 @@ textarea:focus {
     box-shadow: 0 0 10px #6fbeb3;
 }
 
+.clear {
+  background-color: #0B5A4E;
+  color: white;
+  max-width: 4vw;
+  border-radius: 5px;
+}
+
+.clear:hover {
+  background-color: #074137;
+}
+
   .getStarted {
     min-width: 40vw;
     margin-left: 20vw;
