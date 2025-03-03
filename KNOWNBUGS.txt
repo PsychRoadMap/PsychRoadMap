@@ -5,7 +5,11 @@
   On mobile view, when phone is turned sideways, the GET STARTED button is not centered. 
   Centering this button conflicts with the desktop view in a strange way. Likely just requires some careful CSS to fix.
 
-
+3/2 select.jsx
+  Checkbox interferes with accordion behavior such that the accordion opens/closes when checkbox is clicked.
+  Clicking the label checks the associated checkbox without triggering the accordion.
+  Putting the <input> inside of the label does not fix this behavior.
+  
 
 
 
@@ -20,10 +24,7 @@
   <fix>
 
 3/2 select.jsx
-  Routing to selection page disables accordion Javascript (or causes it to malfunction in some way).
+  Routing to selection page disables accordion Javascript (or causes it to malfunction in some way). 
   Page must be refreshed while select.jsx is rendered to enable Javascript.
-  Would likely be fixed with proper use of useState() and useEffect(). Currently using reloadDocument hack, but would like to fix this correctly.
-  Problematic behavior is not present when using proper React Accordion component, but I just cannot figure out how to get that thing styled consistently. 
-  We will have to switch the proper component anyway once the database is in a usable state, so I have until then to figure the styling out.
 
   Fixed by switching to flowbite-react accordion component. Tradeoff is that the accordion is no longer nested.

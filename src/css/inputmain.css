@@ -60,7 +60,7 @@ PHONE SCREEN
   }
 
   .jumbo-img {
-    background-image: url("../assets/stepping-up-cropped.svg");
+    background-image: url("../assets/stepping-up-g3.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #1D1D1D;
@@ -317,7 +317,7 @@ COMPUTER SCREEN
   }
 
   .about.jumbito-img {
-    background-image: url("../assets/data-g.svg");
+    background-image: url("../assets/data-g2.svg");
   }
 
   p.jumbito-text {
