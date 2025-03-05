@@ -209,7 +209,8 @@ textarea:focus {
 
   .card {
     background-color: white;
-    max-width: 90vw;
+    max-width: 25vw;
+    min-width: 300px;
   }
 
   .card>.card-title {
