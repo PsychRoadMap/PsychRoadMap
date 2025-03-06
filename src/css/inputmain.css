@@ -134,8 +134,8 @@ PHONE SCREEN
 
   .select-text input {
     color: #0B5A4E;
-    width: 20px;
-    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
     accent-color: #0B5A4E;
     margin-right: 1em;
   }
@@ -145,27 +145,58 @@ PHONE SCREEN
     accent-color: #0B5A4E;
   }
 
-  input:focus { 
+  .add label,
+  .add input,
+  .delete label,
+  .delete input {
+    margin-right: 6vw;
+    margin-left: 6vw;
+    display: inline-block;
+    width: 80vw;
+  }
+
+  .add textArea {
+    margin-right: 6vw;
+    margin-left: 6vw;
+    width: 80vw;
+  }
+
+  .mastery {
+    max-width: 90vw;
+  }
+
+  .mastery input,
+  .mastery label,
+  .mastery p {
+    margin-left: 5vw;
+  }
+
+  .add p.note {
+    color: #a1a1a1;
+  }
+
+  input:focus {
     outline: none !important;
     border-color: #0B5A4E;
     box-shadow: 0 0 10px #6fbeb3;
-}
-textarea:focus { 
+  }
+
+  textarea:focus {
     outline: none !important;
     border-color: #0B5A4E;
     box-shadow: 0 0 10px #6fbeb3;
-}
+  }
 
-.clear {
-  background-color: #0B5A4E;
-  color: white;
-  max-width: 4vw;
-  border-radius: 5px;
-}
+  .clear {
+    background-color: #0B5A4E;
+    color: white;
+    max-width: 4vw;
+    border-radius: 5px;
+  }
 
-.clear:hover {
-  background-color: #074137;
-}
+  .clear:hover {
+    background-color: #074137;
+  }
 
   .getStarted {
     min-width: 40vw;
@@ -214,7 +245,7 @@ textarea:focus {
   }
 
   .card>.card-title {
-    color:#494A4B;
+    color: #494A4B;
     font-size: xx-large;
     font-weight: bold;
     padding: 1em;
@@ -247,7 +278,8 @@ textarea:focus {
     min-height: 55vh;
   }
 
-  div.divide-y, div.divide-y div.p-5 {
+  div.divide-y,
+  div.divide-y div.p-5 {
     background-color: white;
     border: 0px;
   }
@@ -326,15 +358,41 @@ COMPUTER SCREEN
 
   .mission.jumbito-img {
     background-image: url("../assets/books-g2.svg");
+    background-position: 65vw;
   }
 
   .about.jumbito-img {
     background-image: url("../assets/data-g2.svg");
+    background-position: 65vw;
+  }
+
+  .admin.jumbito-img {
+    background-image: url("../assets/notes.svg");
+    background-position: 65vw;
   }
 
   p.jumbito-text {
     margin-top: 3vh;
     margin-left: 20vw;
+  }
+
+  .add label,
+  .add input,
+  .add textArea,
+  .delete label,
+  .delete input {
+    width: 15vw;
+  }
+
+  .delete input.check {
+    width: 20px;
+    height: 20px;
+    margin-right: 0px;
+  }
+
+  .delete input~label {
+    margin-left: 0px;
+    width: 90vw;
   }
 
   .getStarted {
