@@ -29,34 +29,34 @@ function Select() {
             <p>BACHELOR'S DEGREE</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
         </div>
 
@@ -65,34 +65,34 @@ function Select() {
             <p>BACHELOR'S + EXPERIENCE</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
         </div>
 
@@ -101,34 +101,34 @@ function Select() {
             <p>HIGHER EDUCATION</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
           <div className="card-job ">
-            <p>This is a job</p>
+            <p>This is a potential career</p>
           </div>
         </div>
       </div>
