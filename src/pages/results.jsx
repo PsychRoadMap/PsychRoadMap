@@ -11,7 +11,7 @@ function Select() {
 
         <div class="text-center jumbito-img">
           <div class="flex flex-row justify-content-center align-items-center">
-            <p class="lg:w-500 text-white lg:text-8xl text-4xl lg:text-start text-center w-400 jumbito-text">
+            <p class="lg:w-500 text-white lg:text-8xl md:text-6xl text-4xl lg:text-start text-center w-400 jumbito-text">
               Find your potential!
             </p>
           </div>

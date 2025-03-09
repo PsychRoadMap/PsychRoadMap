@@ -1,10 +1,6 @@
 <date logged> <file>
   <bug description>
 
-2/18 index.jsx
-  On mobile view, when phone is turned sideways, the GET STARTED button is not centered. 
-  Centering this button conflicts with the desktop view in a strange way. Likely just requires some careful CSS to fix.
-
 3/2 select.jsx
   Checkbox interferes with accordion behavior such that the accordion opens/closes when checkbox is clicked.
   Clicking the label checks the associated checkbox without triggering the accordion.
@@ -28,3 +24,8 @@
   Page must be refreshed while select.jsx is rendered to enable Javascript.
 
   Fixed by switching to flowbite-react accordion component. Tradeoff is that the accordion is no longer nested.
+
+3/9 index.jsx
+  On mobile view, when phone is turned sideways, the GET STARTED button is not centered. 
+  
+  Fixed by adjusting CSS
