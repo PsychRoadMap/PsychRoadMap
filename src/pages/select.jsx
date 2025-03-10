@@ -187,34 +187,34 @@ const Select = () => {
 
   return (
     <main>
-      <div class="container-fluid jumbito">
+      <div className="container-fluid jumbito">
 
-        <div class="text-center jumbito-img">
-          <div class="flex flex-row justify-content-center align-items-center">
-            <p class="block lg:w-500 text-white lg:text-8xl md:text-6xl text-4xl lg:text-start text-center w-400 text-wrap jumbito-text">
+        <div className="text-center jumbito-img">
+          <div className="flex flex-row justify-content-center align-items-center">
+            <p className="block lg:w-500 text-white lg:text-8xl md:text-6xl text-4xl lg:text-start text-center w-400 text-wrap jumbito-text">
               Find your potential!
             </p>
           </div>
         </div>
       </div>
 
-      <div class="gold">
+      <div className="gold">
         .
       </div>
 
       {/* SELECTION SECTION */}
-      <div class="select-text bg-white pb-10">
-        <p class="lg:text-6xl text-3xl py-10"><b>Select your courses to get started!</b></p>
-        <p class="text-base">
+      <div className="select-text bg-white pb-10">
+        <p className="lg:text-6xl text-3xl py-10"><b>Select your courses to get started!</b></p>
+        <p className="text-base">
           Select all of the Psychology courses you have taken or plan to take as you work towards your degree.
           We recommend meeting or exceeding the credit hour requirements per course grouping for the best results.
         </p>
-        <p class="text-base pt-5">
+        <p className="text-base pt-5">
           Courses are sectioned by the type of coursework taught, as categorized by Lindenwood University.
           Each section requires a certain amount of credit hours in order to graduate with a given degree,
           but students are welcome to choose as few or as many courses as they'd like for the purposes of this application.
         </p>
-        <p class="text-base pt-5">
+        <p className="text-base pt-5">
           Once you have finished selecting your courses,
           press the "Generate Results" button at the bottom of the page to see what career paths PsychRoadMap suggests for you!
         </p>
@@ -227,8 +227,8 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY10000">
-                  <input type="checkbox" id="PSY10000" name="PSY10000" value="PSY10000" checked={checkboxes.PSY10000} onChange={handleCheckboxChange} />
+                <label htmlFor="PSY10000"  onClick="e.cancelBubble">
+                  <input type="checkbox" id="PSY10000" name="PSY10000" value="PSY10000" onClick="e.cancelBubble" checked={checkboxes.PSY10000} onChange={handleCheckboxChange} />
                   PSY 10000 - Principles of Psychology
                 </label>
               </Accordion.Title>
@@ -243,7 +243,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY30400">
+                <label htmlFor="PSY30400"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY30400" name="PSY30400" value="PSY30400" checked={checkboxes.PSY30400} onChange={handleCheckboxChange} />
                   PSY 30400 - Basic Research Methods
                 </label>
@@ -259,7 +259,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY30600">
+                <label htmlFor="PSY30600"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY30600" name="PSY30600" value="PSY30600" checked={checkboxes.PSY30600} onChange={handleCheckboxChange} />
                   PSY 30600 - Behavioral Science Statistic
                 </label>
@@ -275,7 +275,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section end-section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY48500">
+                <label htmlFor="PSY48500"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY48500" name="PSY48500" value="PSY48500" checked={checkboxes.PSY48500} onChange={handleCheckboxChange} />
                   PSY 48500 - Senior Seminar
                 </label>
@@ -297,7 +297,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY30300">
+                <label htmlFor="PSY30300"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY30300" name="PSY30300" value="PSY30300" checked={checkboxes.PSY30300} onChange={handleCheckboxChange} />
                   PSY 30300 - Abnormal Psychology
                 </label>
@@ -313,7 +313,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY30900">
+                <label htmlFor="PSY30900"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY30900" name="PSY30900" value="PSY30900" checked={checkboxes.PSY30900} onChange={handleCheckboxChange} />
                   PSY 30900 - Personality
                 </label>
@@ -329,7 +329,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY31100">
+                <label htmlFor="PSY31100"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY31100" name="PSY31100" value="PSY31100" checked={checkboxes.PSY31100} onChange={handleCheckboxChange} />
                   PSY 31100 - Behavior Modification
                 </label>
@@ -345,7 +345,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY32100">
+                <label htmlFor="PSY32100"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY32100" name="PSY32100" value="PSY32100" checked={checkboxes.PSY32100} onChange={handleCheckboxChange} />
                   PSY 32100 - Health Psychology
                 </label>
@@ -361,7 +361,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY32400">
+                <label htmlFor="PSY32400"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY32400" name="PSY32400" value="PSY32400" checked={checkboxes.PSY32400} onChange={handleCheckboxChange} />
                   PSY 32400 - Psychological Testing
                 </label>
@@ -377,7 +377,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY34100">
+                <label htmlFor="PSY34100"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY34100" name="PSY34100" value="PSY34100" checked={checkboxes.PSY34100} onChange={handleCheckboxChange} />
                   PSY 34100 - Psychotherapy
                 </label>
@@ -393,7 +393,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section end-section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY35100">
+                <label htmlFor="PSY35100"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY35100" name="PSY35100" value="PSY35100" checked={checkboxes.PSY35100} onChange={handleCheckboxChange} />
                   PSY 35100 - Understanding Depression
                 </label>
@@ -415,7 +415,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY31500">
+                <label htmlFor="PSY31500"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY31500" name="PSY31500" value="PSY31500" checked={checkboxes.PSY31500} onChange={handleCheckboxChange} />
                   PSY 31500 - Psychology of Prejudice
                 </label>
@@ -431,7 +431,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY32500">
+                <label htmlFor="PSY32500"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY32500" name="PSY32500" value="PSY32500" checked={checkboxes.PSY32500} onChange={handleCheckboxChange} />
                   PSY 32500 - Behavioral Neuroscience
                 </label>
@@ -447,7 +447,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY32600">
+                <label htmlFor="PSY32600"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY32600" name="PSY32600" value="PSY32600" checked={checkboxes.PSY32600} onChange={handleCheckboxChange} />
                   PSY 32600 - Sensation and Perception
                 </label>
@@ -463,7 +463,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY33000">
+                <label htmlFor="PSY33000"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY33000" name="PSY33000" value="PSY33000" checked={checkboxes.PSY33000} onChange={handleCheckboxChange} />
                   PSY 33000 - Learning and Memory
                 </label>
@@ -479,7 +479,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY33100">
+                <label htmlFor="PSY33100"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY33100" name="PSY33100" value="PSY33100" checked={checkboxes.PSY33100} onChange={handleCheckboxChange} />
                   PSY 33100 - Cognitive Psychology
                 </label>
@@ -495,7 +495,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY33200">
+                <label htmlFor="PSY33200"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY33200" name="PSY33200" value="PSY33200" checked={checkboxes.PSY33200} onChange={handleCheckboxChange} />
                   PSY 33200 - Psychology of Motivation and Emotion
                 </label>
@@ -511,7 +511,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section end-section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY33400">
+                <label htmlFor="PSY33400"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY33400" name="PSY33400" value="PSY33400" checked={checkboxes.PSY33400} onChange={handleCheckboxChange} />
                   PSY 33400 - Social Psychology
                 </label>
@@ -533,7 +533,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className="flex justify-between w-full gap-3">
-                <label htmlFor="PSY20500">
+                <label htmlFor="PSY20500"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY20500" name="PSY20500" value="PSY20500" checked={checkboxes.PSY20500} onChange={handleCheckboxChange} />
                   PSY 20500 - Human Development
                 </label>
@@ -549,7 +549,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className="flex justify-between w-full gap-3">
-                <label htmlFor="PSY20800">
+                <label htmlFor="PSY20800"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY20800" name="PSY20800" value="PSY20800" checked={checkboxes.PSY20800} onChange={handleCheckboxChange} />
                   PSY 20800 - Child Psychology
                 </label>
@@ -565,7 +565,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className="flex justify-between w-full gap-3">
-                <label htmlFor="PSY21000">
+                <label htmlFor="PSY21000"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY21000" name="PSY21000" value="PSY21000" checked={checkboxes.PSY21000} onChange={handleCheckboxChange} />
                   PSY 21000 - Psychology of Parenting
                 </label>
@@ -581,7 +581,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className="flex justify-between w-full gap-3">
-                <label htmlFor="PSY31200">
+                <label htmlFor="PSY31200"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY31200" name="PSY31200" value="PSY31200" checked={checkboxes.PSY31200} onChange={handleCheckboxChange} />
                   PSY 31200 - Psychology of Aging
                 </label>
@@ -597,7 +597,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className="flex justify-between w-full gap-3">
-                <label htmlFor="PSY31300">
+                <label htmlFor="PSY31300"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY31300" name="PSY31300" value="PSY31300" checked={checkboxes.PSY31300} onChange={handleCheckboxChange} />
                   PSY 31300 - Psychology of Adolescence
                 </label>
@@ -613,7 +613,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section end-section">
               <Accordion.Title className="flex justify-between w-full gap-3">
-                <label htmlFor="PSY36500">
+                <label htmlFor="PSY36500"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY36500" name="PSY36500" value="PSY36500" checked={checkboxes.PSY36500} onChange={handleCheckboxChange} />
                   PSY 36500 - Human Sexuality
                 </label>
@@ -635,7 +635,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label for="PSY15700">
+                <label htmlFor="PSY15700" onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY15700" name="PSY15700" value="PSY15700" checked={checkboxes.PSY15700} onChange={handleCheckboxChange} />
                   PSY 15700 - Psychology of Leadership
                 </label>
@@ -651,7 +651,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label for="PSY18100">
+                <label htmlFor="PSY18100" onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY18100" name="PSY18100" value="PSY18100" checked={checkboxes.PSY18100} onChange={handleCheckboxChange} />
                   PSY 18100 - Cultural Psychology
                 </label>
@@ -667,7 +667,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label for="PSY21200">
+                <label htmlFor="PSY21200" onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY21200" name="PSY21200" value="PSY21200" checked={checkboxes.PSY21200} onChange={handleCheckboxChange} />
                   PSY 21200 - Japanese Culture, Society, and Mind
                 </label>
@@ -683,7 +683,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label for="PSY21500">
+                <label htmlFor="PSY21500" onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY21500" name="PSY21500" value="PSY21500" checked={checkboxes.PSY21500} onChange={handleCheckboxChange} />
                   PSY 21500 - Careers in Psychology
                 </label>
@@ -699,7 +699,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label for="PSY23500">
+                <label htmlFor="PSY23500" onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY23500" name="PSY23500" value="PSY23500" checked={checkboxes.PSY23500} onChange={handleCheckboxChange} />
                   PSY 23500 - Death, Dying, Life, & Living
                 </label>
@@ -715,7 +715,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label for="PSY30800">
+                <label htmlFor="PSY30800" onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY30800" name="PSY30800" value="PSY30800" checked={checkboxes.PSY30800} onChange={handleCheckboxChange} />
                   PSY 30800 - Psychology of Women & Gender
                 </label>
@@ -731,7 +731,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label for="PSY39012">
+                <label htmlFor="PSY39012" onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY39012" name="PSY39012" value="PSY39012" checked={checkboxes.PSY39012} onChange={handleCheckboxChange} />
                   PSY 39012 - Special Topics: Memory in the Media
                 </label>
@@ -747,7 +747,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label for="PSY40440">
+                <label htmlFor="PSY40440" onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY40440" name="PSY40440" value="PSY40440" checked={checkboxes.PSY40440} onChange={handleCheckboxChange} />
                   PSY 40440 - Advanced Research Methods & Statistics
                 </label>
@@ -763,7 +763,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label for="PSY45000">
+                <label htmlFor="PSY45000" onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY45000" name="PSY45000" value="PSY45000" checked={checkboxes.PSY45000} onChange={handleCheckboxChange} />
                   PSY 45000 - Psychology Practicum
                 </label>
@@ -779,7 +779,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label for="PSY48000">
+                <label htmlFor="PSY48000" onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY48000" name="PSY48000" value="PSY48000" checked={checkboxes.PSY48000} onChange={handleCheckboxChange} />
                   PSY 48000 - Psychology Research Lab
                 </label>
@@ -795,7 +795,7 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section end-section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label for="PSY48300">
+                <label htmlFor="PSY48300" onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY48300" name="PSY48300" value="PSY48300" checked={checkboxes.PSY48300} onChange={handleCheckboxChange} />
                   PSY 48300 - Senior Thesis
                 </label>
@@ -810,8 +810,8 @@ const Select = () => {
 
         </Accordion>
 
-        <div class="flex justify-center align-items-center mt-10">
-          <Link to="/results" class="secondary rounded-xl lg:my-auto lg:w-100 w-60 my-20 px-5 py-20 text-4xl text-center"><b>GET RESULTS</b></Link>
+        <div className="flex justify-center align-items-center mt-10">
+          <Link to="/results" className="secondary rounded-xl lg:my-auto lg:w-100 w-60 my-20 px-5 py-20 text-4xl text-center"><b>GET RESULTS</b></Link>
         </div>
 
       </div>

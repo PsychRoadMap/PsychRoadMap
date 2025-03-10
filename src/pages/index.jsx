@@ -12,7 +12,7 @@ const Index = () => {
           <div class="flex flex-row justify-center mask">
 
             <div class="flex flex-row justify-center">
-              <Link to="/select" class="secondary block rounded-xl lg:my-auto lg:py-20 lg:w-100 w-60 my-auto px-5 py-20 text-4xl text-center getStarted"><b>GET STARTED</b></Link>
+              <Link to="/select" class="secondary block rounded-xl lg:w-100 w-60 my-auto px-5 py-20 text-4xl text-center getStarted"><b>GET STARTED</b></Link>
             </div>
           </div>
         </div>
