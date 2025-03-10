@@ -137,13 +137,15 @@ function Select() {
         <div class="flex justify-center align-items-center mt-10">
           <Link to="/select" class="secondary rounded-xl lg:my-auto lg:w-150 w-60 my-5 px-5 py-20 text-4xl text-center"><b>TRY A DIFFERENT PATH</b></Link>
         </div>
-        <div class="flex justify-center align-items-center lg:mt-10 flex-wrap">
-          <Link to="/results" class="secondary rounded-xl lg:my-auto lg:w-70 w-60 my-5 px-5 py-10 text-4xl text-center lg:mr-5"><b>EXPORT</b></Link>
-          <a href="https://www.lindenwood.edu/science/social-and-behavioral-sciences/psychology-bs/" class="secondary rounded-xl lg:my-auto lg:w-70 w-60 my-5 px-5 py-10 text-4xl text-center lg:ml-5"><b>CONTACT</b></a>
+        <div class="flex justify-center align-items-center lg:mt-10 flex-wrap lg:gap-8 gap-2">
+          <Link to="/results" class="secondary rounded-xl lg:my-auto lg:w-70 w-60 my-5 px-5 py-10 text-4xl text-center" onClick={() => { window.print() }}><b>EXPORT</b></Link>
+          <a href="https://www.lindenwood.edu/science/social-and-behavioral-sciences/psychology-bs/" class="secondary rounded-xl lg:my-auto lg:w-70 w-60 my-5 px-5 py-10 text-4xl text-center"><b>CONTACT</b></a>
+        </div>
+        <div>
+          <p className="text-center mt-3 px-3"> To save to PDF, select "Save to PDF" under "Destination" in the print settings.</p>
         </div>
       </div>
 
-      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     </main >
   );
 };
