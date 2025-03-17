@@ -9,6 +9,10 @@ PHONE SCREEN
 
 @media (min-width: 0px) {
 
+  main {
+    min-height: 85vh;
+  }
+
   .gold {
     background-color: #b5a36a;
     border: 0px;
@@ -116,6 +120,12 @@ PHONE SCREEN
   }
 
   .select-text p {
+    color: #494A4B;
+    margin-right: 6vw;
+    margin-left: 6vw;
+  }
+
+  .select-text .mission-text .button {
     color: #494A4B;
     margin-right: 6vw;
     margin-left: 6vw;
@@ -268,6 +278,21 @@ PHONE SCREEN
     fill: #0B5A4E;
   }
 
+  .mission-text {
+    width: 40vh;
+  }
+
+  .mission-img {
+    margin: 0vh 2vw 0vh 2vw;
+    width: 40vh;
+  }
+
+  .mission-img>img {
+    border: #b5a36a solid;
+    border-width: 5px;
+    border-radius: 3%;
+  }
+
   .waiting {
     background-image: url(../assets/waiting-g.svg);
     background-position: center center;
@@ -323,6 +348,10 @@ COMPUTER SCREEN
 *****/
 
 @media (min-width: 1024px) {
+
+  main {
+    min-height: 82vh;
+  }
 
   .headerbutton {
     min-width: 8vw;
@@ -446,6 +475,13 @@ COMPUTER SCREEN
     min-height: 30vh;
   }
 
+  .select-text .mission-text p,
+  .select-text .mission-text .button {
+    color: #494A4B;
+    margin-right: 0vw;
+    margin-left: 2vw;
+  }
+
   .card {
     max-width: 15vw;
   }
@@ -454,7 +490,11 @@ COMPUTER SCREEN
 
 @media print {
 
-  html, html p, body, main, .results {
+  html,
+  html p,
+  body,
+  main,
+  .results {
     color: black;
     background-color: white;
   }
