@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "flowbite/src/themes/default";
 @plugin "flowbite/plugin";
-@source "../node_modules/flowbite";
 
 /*****  
 PHONE SCREEN
@@ -49,10 +48,6 @@ PHONE SCREEN
 
   .logo-text>p {
     max-width: 40vw;
-  }
-
-  li>a {
-    margin-left: -2vw;
   }
 
   span.navbar-toggler-icon {
