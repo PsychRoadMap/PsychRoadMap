@@ -10,11 +10,16 @@ function Header() {
   useEffect(() => {
     const hamburgerButton = document.querySelector('[data-collapse-toggle="mobile-menu"]');
     const mobileMenu = document.getElementById('mobile-menu');
-
-    hamburgerButton.addEventListener('click', () => {
+  
+    const toggleMenu = () => {
       mobileMenu.classList.toggle('hidden');
-    });
-
+    };
+  
+    hamburgerButton.addEventListener('click', toggleMenu);
+  
+    return () => {
+      hamburgerButton.removeEventListener('click', toggleMenu);
+    };
   }, []);
 
   return (
