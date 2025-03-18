@@ -1,4 +1,4 @@
-import { Accordion, AccordionContent, AccordionPanel } from "flowbite-react";
+import { Accordion} from "flowbite-react";
 
 import React, { useState, useEffect } from "react";
 
