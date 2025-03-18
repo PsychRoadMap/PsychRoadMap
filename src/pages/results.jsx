@@ -7,18 +7,18 @@ function Select() {
   return (
     <main>
 
-      <div class="container-fluid jumbito">
+      <div className="container-fluid jumbito">
 
-        <div class="text-center jumbito-img">
-          <div class="flex flex-row justify-content-center align-items-center">
-            <p class="lg:w-500 text-white lg:text-8xl md:text-6xl text-4xl lg:text-start text-center w-400 jumbito-text">
+        <div className="text-center jumbito-img">
+          <div className="flex flex-row justify-content-center align-items-center">
+            <p className="lg:w-500 text-white lg:text-8xl md:text-6xl text-4xl lg:text-start text-center w-400 jumbito-text">
               Find your potential!
             </p>
           </div>
         </div>
       </div>
 
-      <div class="gold">
+      <div className="gold">
         .
       </div>
 
@@ -134,12 +134,12 @@ function Select() {
       </div>
 
       <div className="my-5 button pb-10">
-        <div class="flex justify-center align-items-center mt-10">
-          <Link to="/select" class="secondary rounded-xl lg:my-auto lg:w-150 w-60 my-5 px-5 py-20 text-4xl text-center"><b>TRY A DIFFERENT PATH</b></Link>
+        <div className="flex justify-center align-items-center mt-10">
+          <Link to="/select" className="secondary rounded-xl lg:my-auto lg:w-150 w-60 my-5 px-5 py-20 text-4xl text-center"><b>TRY A DIFFERENT PATH</b></Link>
         </div>
-        <div class="flex justify-center align-items-center lg:mt-10 flex-wrap lg:gap-8 gap-2">
-          <Link to="/results" class="secondary rounded-xl lg:my-auto lg:w-70 w-60 my-5 px-5 py-10 text-4xl text-center" onClick={() => { window.print() }}><b>EXPORT</b></Link>
-          <a href="https://www.lindenwood.edu/science/social-and-behavioral-sciences/psychology-bs/" class="secondary rounded-xl lg:my-auto lg:w-70 w-60 my-5 px-5 py-10 text-4xl text-center"><b>CONTACT</b></a>
+        <div className="flex justify-center align-items-center lg:mt-10 flex-wrap lg:gap-8 gap-2">
+          <Link to="/results" className="secondary rounded-xl lg:my-auto lg:w-70 w-60 my-5 px-5 py-10 text-4xl text-center" onClick={() => { window.print() }}><b>EXPORT</b></Link>
+          <a href="https://www.lindenwood.edu/science/social-and-behavioral-sciences/psychology-bs/" className="secondary rounded-xl lg:my-auto lg:w-70 w-60 my-5 px-5 py-10 text-4xl text-center"><b>CONTACT</b></a>
         </div>
         <div>
           <p className="text-center mt-3 px-3"> To save to PDF, select "Save to PDF" under "Destination" in the print settings.</p>
