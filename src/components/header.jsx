@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -6,6 +6,17 @@ import logo from '../assets/prm.png'
 
 
 function Header() {
+
+  useEffect(() => {
+    const hamburgerButton = document.querySelector('[data-collapse-toggle="mobile-menu"]');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburgerButton.addEventListener('touchstart', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+  }, []);
+
   return (
     <header>
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
