@@ -26,7 +26,7 @@
       const hamburgerButton = document.querySelector('[data-collapse-toggle="mobile-menu"]');
       const mobileMenu = document.getElementById('mobile-menu');
 
-      hamburgerButton.addEventListener('click', () => {
+      hamburgerButton.addEventListener('touchstart', () => {
         mobileMenu.classList.toggle('hidden');
       });
       console.log("page is fully loaded");
