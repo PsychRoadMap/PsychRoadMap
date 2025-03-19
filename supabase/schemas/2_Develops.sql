@@ -18,7 +18,7 @@ ALTER TABLE ONLY "public"."Develops"
 
 ALTER TABLE "public"."Develops" OWNER TO "postgres";
 
-ALTER TABLE "public"."Develops" ENABLE ROW LEVEL SECURITY;
+ALTER TABLE "public"."Develops" DISABLE ROW LEVEL SECURITY;
 
 COMMENT ON TABLE "public"."Develops" IS 'Development ratings for masteries from courses';
 

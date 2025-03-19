@@ -9,7 +9,7 @@ ALTER TABLE ONLY "public"."Mastery"
 
 ALTER TABLE "public"."Mastery" OWNER TO "postgres";
 
-ALTER TABLE "public"."Mastery" ENABLE ROW LEVEL SECURITY;
+ALTER TABLE "public"."Mastery" DISABLE ROW LEVEL SECURITY;
 
 COMMENT ON TABLE "public"."Mastery" IS 'O*Net Knowledge, Skills, Abilities, and Work Activities metadata';
 
