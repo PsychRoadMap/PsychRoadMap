@@ -1,8 +1,0 @@
-{
-  "name": "postgres-project",
-  "adapter": "postgres",
-  "host": "db.cvdvtzqdkapqvorfgwox.supabase.co:5432/postgres",
-  "port": 5432,
-  "user": "postgres",
-  "database": "public"
-}
