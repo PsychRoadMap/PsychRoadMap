@@ -19,8 +19,6 @@ const Select = () => {
     PSY31100: false,
     PSY32100: false,
     PSY32400: false,
-    PSY34100: false,
-    PSY35100: false,
 
     PSY31500: false,
     PSY32500: false,
@@ -43,10 +41,9 @@ const Select = () => {
     PSY21500: false,
     PSY23500: false,
     PSY30800: false,
-    PSY40440: false,
+    PSY39012: false,
     PSY45000: false,
     PSY48000: false,
-    PSY48300: false,
   });
 
   // Make sure saved checkboxes are only loaded once per refresh
@@ -95,8 +92,6 @@ const Select = () => {
         clearedCheckboxes.PSY31100 = false;
         clearedCheckboxes.PSY32100 = false;
         clearedCheckboxes.PSY32400 = false;
-        clearedCheckboxes.PSY34100 = false;
-        clearedCheckboxes.PSY35100 = false;
         break;
       }
       case "experimental": {
@@ -125,10 +120,9 @@ const Select = () => {
         clearedCheckboxes.PSY21500 = false;
         clearedCheckboxes.PSY23500 = false;
         clearedCheckboxes.PSY30800 = false;
-        clearedCheckboxes.PSY40440 = false;
+        clearedCheckboxes.PSY39012 = false;
         clearedCheckboxes.PSY45000 = false;
         clearedCheckboxes.PSY48000 = false;
-        clearedCheckboxes.PSY48300 = false;
         break;
       }
     }
@@ -152,8 +146,6 @@ const Select = () => {
     clearedCheckboxes.PSY31100 = false;
     clearedCheckboxes.PSY32100 = false;
     clearedCheckboxes.PSY32400 = false;
-    clearedCheckboxes.PSY34100 = false;
-    clearedCheckboxes.PSY35100 = false;
 
     clearedCheckboxes.PSY31500 = false;
     clearedCheckboxes.PSY32500 = false;
@@ -176,10 +168,9 @@ const Select = () => {
     clearedCheckboxes.PSY21500 = false;
     clearedCheckboxes.PSY23500 = false;
     clearedCheckboxes.PSY30800 = false;
-    clearedCheckboxes.PSY40440 = false;
+    clearedCheckboxes.PSY39012 = false;
     clearedCheckboxes.PSY45000 = false;
     clearedCheckboxes.PSY48000 = false;
-    clearedCheckboxes.PSY48300 = false;
 
     setCheckboxes(clearedCheckboxes);
     localStorage.setItem('checkboxes', JSON.stringify(clearedCheckboxes));
@@ -192,29 +183,20 @@ const Select = () => {
         <div className="text-center jumbito-img">
           <div className="flex flex-row justify-content-center align-items-center">
             <p className="block lg:w-500 text-white lg:text-8xl md:text-6xl text-4xl lg:text-start text-center w-400 text-wrap jumbito-text">
-              Find your potential!
+              Select your courses!
             </p>
           </div>
         </div>
       </div>
 
       <div className="gold">
-        .
+        <p className="period">.</p>
       </div>
 
       {/* SELECTION SECTION */}
       <div className="select-text bg-white pb-10">
-        <p className="lg:text-6xl text-3xl py-10"><b>Select your courses to get started!</b></p>
-        <p className="text-base">
+        <p className="text-base py-5">
           Select all of the Psychology courses you have taken or plan to take as you work towards your degree.
-          We recommend meeting or exceeding the credit hour requirements per course grouping for the best results.
-        </p>
-        <p className="text-base pt-5">
-          Courses are sectioned by the type of coursework taught, as categorized by Lindenwood University.
-          Each section requires a certain amount of credit hours in order to graduate with a given degree,
-          but students are welcome to choose as few or as many courses as they'd like for the purposes of this application.
-        </p>
-        <p className="text-base pt-5">
           Once you have finished selecting your courses,
           press the "Generate Results" button at the bottom of the page to see what career paths PsychRoadMap suggests for you!
         </p>
@@ -359,7 +341,7 @@ const Select = () => {
           </Accordion.Panel>
 
           <Accordion.Panel>
-            <div className="section">
+            <div className="section end-section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
                 <label htmlFor="PSY32400"  onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY32400" name="PSY32400" value="PSY32400" checked={checkboxes.PSY32400} onChange={handleCheckboxChange} />
@@ -369,38 +351,6 @@ const Select = () => {
               <Accordion.Content>
                 <p className="desc">
                   Examines mental measurement theory and the principles of reliability, validity, and standardization as related to the construction and interpretation of tests. Tests of achievement, aptitude, intelligence, interest, and personality are studied as illustrations of the problems of measurement and the variety of solutions to those problems. Ethics of test use receives special consideration.
-                </p>
-              </Accordion.Content>
-            </div>
-          </Accordion.Panel>
-
-          <Accordion.Panel>
-            <div className="section">
-              <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY34100"  onClick="e.cancelBubble">
-                  <input type="checkbox" id="PSY34100" name="PSY34100" value="PSY34100" checked={checkboxes.PSY34100} onChange={handleCheckboxChange} />
-                  PSY 34100 - Psychotherapy
-                </label>
-              </Accordion.Title>
-              <Accordion.Content>
-                <p className="desc">
-                  An introduction to the theories, principles, and techniques of various current approaches to psychotherapy.
-                </p>
-              </Accordion.Content>
-            </div>
-          </Accordion.Panel>
-
-          <Accordion.Panel>
-            <div className="section end-section">
-              <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY35100"  onClick="e.cancelBubble">
-                  <input type="checkbox" id="PSY35100" name="PSY35100" value="PSY35100" checked={checkboxes.PSY35100} onChange={handleCheckboxChange} />
-                  PSY 35100 - Understanding Depression
-                </label>
-              </Accordion.Title>
-              <Accordion.Content>
-                <p className="desc">
-                  This seminar-style course involves an exploration of several ways of thinking about, talking about, and understanding the experience generally labeled as “depression,” all with an eye toward gaining a greater appreciation of what its inner experience is like. Some of the perspectives we’ll explore are the psychodynamic, cognitive, humanistic-existential, neurobiological, evolutionary, cultural, gendered, and literary perspectives on the first-hand experience of depression. A range of intervention approaches will also be explored. This course will entail substantial reading, writing, and discussion, and is intended for upper level students with a strong interest in the topic.
                 </p>
               </Accordion.Content>
             </div>
@@ -747,22 +697,6 @@ const Select = () => {
           <Accordion.Panel>
             <div className="section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY40440" onClick="e.cancelBubble">
-                  <input type="checkbox" id="PSY40440" name="PSY40440" value="PSY40440" checked={checkboxes.PSY40440} onChange={handleCheckboxChange} />
-                  PSY 40440 - Advanced Research Methods & Statistics
-                </label>
-              </Accordion.Title>
-              <Accordion.Content>
-                <p className="desc">
-                  This is an advanced course in research design and analysis. Students design and conduct original behavioral research, analyze their data, and present their findings to others. Strongly recommended for students planning to pursue graduate study in the social or behavioral sciences.
-                </p>
-              </Accordion.Content>
-            </div>
-          </Accordion.Panel>
-
-          <Accordion.Panel>
-            <div className="section">
-              <Accordion.Title className='flex justify-between w-full gap-3'>
                 <label htmlFor="PSY45000" onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY45000" name="PSY45000" value="PSY45000" checked={checkboxes.PSY45000} onChange={handleCheckboxChange} />
                   PSY 45000 - Psychology Practicum
@@ -777,7 +711,7 @@ const Select = () => {
           </Accordion.Panel>
 
           <Accordion.Panel>
-            <div className="section">
+            <div className="section end-section">
               <Accordion.Title className='flex justify-between w-full gap-3'>
                 <label htmlFor="PSY48000" onClick="e.cancelBubble">
                   <input type="checkbox" id="PSY48000" name="PSY48000" value="PSY48000" checked={checkboxes.PSY48000} onChange={handleCheckboxChange} />
@@ -787,22 +721,6 @@ const Select = () => {
               <Accordion.Content>
                 <p className="desc">
                   Students will plan, execute and report on a project in consultation with a faculty mentor.
-                </p>
-              </Accordion.Content>
-            </div>
-          </Accordion.Panel>
-
-          <Accordion.Panel>
-            <div className="section end-section">
-              <Accordion.Title className='flex justify-between w-full gap-3'>
-                <label htmlFor="PSY48300" onClick="e.cancelBubble">
-                  <input type="checkbox" id="PSY48300" name="PSY48300" value="PSY48300" checked={checkboxes.PSY48300} onChange={handleCheckboxChange} />
-                  PSY 48300 - Senior Thesis
-                </label>
-              </Accordion.Title>
-              <Accordion.Content>
-                <p className="desc">
-                  This is an independent research experience in which advanced students design, conduct, and write up a substantial original research project. Students are encouraged to present the results of their work at regional and/or national conferences.
                 </p>
               </Accordion.Content>
             </div>

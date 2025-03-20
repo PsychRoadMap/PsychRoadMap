@@ -19,7 +19,7 @@ function Select() {
       </div>
 
       <div className="gold">
-        .
+        <p className="period">.</p>
       </div>
 
       <div className="results flex flex-wrap justify-center">

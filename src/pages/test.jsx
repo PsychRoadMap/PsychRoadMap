@@ -1,42 +1,19 @@
 import React from "react";
 
-import img from '../assets/psychology-ba-zoom.png'
+import { Link } from "react-router-dom";
 
-import text from '../components/text.json';
-
-
-function GetText({ textName }) {
-
+const Index = () => {
   return (
-    <>
-        {(() => {
-            const arr = [];
-            for (let i = 0; i <  Object.values(text[textName]).length; i++) {
-                arr.push(
-                    <div>
-                        <p>{Object.values(text[textName])[i]}</p>
-                    </div>
-                );
-            }
-            return arr;
-        })()}
-    </>
-)
+    <main id="test" className="test">
+      <div className="container-fluid jumbo">
 
-}
+        <div className="text-center jumbo-img"> 
 
-function Select() {
+          <div className="flex flex-row justify-center mask">
 
-  return (
-    <main>
-
-      <div className="container-fluid jumbito">
-
-        <div className="text-center mission jumbito-img">
-          <div className="flex flex-row justify-content-center align-items-center">
-            <p className="lg:w-500 text-white lg:text-8xl text-4xl lg:text-start text-center w-400 jumbito-text">
-              Learn our mission!
-            </p>
+            <div className="flex flex-row justify-center">
+              <Link to="/select" className="secondary block rounded-xl lg:w-100 w-60 my-auto px-5 py-20 text-4xl text-center getStarted"><b>GET STARTED</b></Link>
+            </div>
           </div>
         </div>
       </div>
@@ -45,21 +22,16 @@ function Select() {
         .
       </div>
 
-      <div className="select-text flex justify-center flex-wrap">
-        <div className="my-5 mx-2 mission-text">
-          <p className="lg:text-6xl text-3xl py-10"> Our Mission </p>
-          <GetText textName="Mission" />
-          <div className="my-5 button py-10">
-            <a href="https://www.lindenwood.edu/science/social-and-behavioral-sciences/psychology-bs/" class="secondary rounded-xl lg:my-auto lg:w-70 w-60 my-5 px-5 py-5 text-4xl text-center"><b>CONTACT</b></a>
-          </div>
-        </div>
-        <div className="mission-img py-20" >
-          <img src={img} />
-        </div>
+      <div className="index-text"> 
+        <p className="lg:text-8xl text-4xl pt-10 lg:text-start text-center"><b>PLAN YOUR DEGREE</b></p>
+        <p className="lg:text-7xl text-3xl lg:text-end text-center"><b>FIND YOUR PATH</b></p>
+        <p className="lg:text-xl text-base py-10">
+          PsychRoadMap is a tool for students of psychology at Lindenwood University, made to cater specifically to your learning experience. <br/> 
+          Use PsychRoadMap to stop, take a look at where you are, and help decide where you want to go. <br/>
+          To begin, click the "GET STARTED" button above.</p>
       </div>
-
-    </main >
+    </main>
   );
 };
 
-export default Select;
+export default Index;

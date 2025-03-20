@@ -26,7 +26,7 @@ function Select() {
       <div className="select-text flex justify-center flex-wrap">
         <div className="my-5 mx-2 mission-text">
           <p className="lg:text-6xl text-3xl py-10"> Our Mission </p>
-          <p>PsychRoadmap is tool to help you, the student, connect knowledge and skills that you have developed in your courses (or will develop in future courses) to potential employment opportunities.</p>
+          <p>PsychRoadmap is a tool to help you, the student, connect knowledge and skills that you have developed in your courses (or will develop in future courses) to potential employment opportunities.</p>
           <p>Our hope it that this information will help you identify new potential career paths and guide your upcoming course selections.</p>
           <p>While you are welcome to explore this on your own, it is also a great advising tool.</p>
           <p>Bring your results to your next advising meeting to discuss your future plans with your advisor.</p>
