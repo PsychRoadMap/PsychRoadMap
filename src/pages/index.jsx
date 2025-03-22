@@ -19,7 +19,7 @@ const Index = () => {
       </div>
 
       <div className="gold">
-        .
+        <p className="period">.</p>
       </div>
 
       <div className="index-text">

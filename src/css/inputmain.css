@@ -226,20 +226,14 @@ PHONE SCREEN
 
   .section {
     border: solid;
-    border-bottom: 0px;
     border-color: #E9E5D6;
+    margin-top: -3px;
     margin-left: 6vw;
     margin-right: 6vw;
     padding-left: 3vw;
     padding-right: 3vw;
     padding-top: 1vh;
     padding-bottom: 1vh;
-  }
-
-  .section.end-section {
-    border: solid;
-    border-bottom-width: medium;
-    border-color: #E9E5D6;
   }
 
   .section button {
@@ -320,6 +314,81 @@ PHONE SCREEN
 
   footer a {
     color: gray;
+  }
+
+  .html2pdf__container {
+
+    body {
+      height: 80vh;
+    }
+
+    html,
+    html p,
+    body,
+    main,
+    .results {
+      color: black;
+      background-color: white;
+    }
+
+    #mobile-menu-2,
+    .jumbito,
+    .text-gray-500,
+    .gold,
+    .button,
+    footer {
+      display: none;
+      background-color: white;
+    }
+
+    header {
+      min-height: 3vh;
+      border-bottom: solid #b5a36a;
+      border-bottom-width: 1rem;
+      background-color: white;
+    }
+
+    nav {
+      min-height: 3vh;
+      border-bottom: solid #1D1D1D;
+      border-bottom-width: 1rem;
+      background-color: white;
+    }
+
+    .results {
+      margin: 0px;
+      background-color: white;
+    }
+
+    .card {
+      border: solid;
+      border-color: black;
+      max-width: 240px;
+      min-width: 240px;
+      margin: 10px 0px 0px 0px;
+    }
+
+    .card>.card-title,
+    .card-title>p {
+      font-size: .8rem;
+      font-weight: bold;
+      text-align: left;
+      padding: 5px;
+      background-color: white;
+    }
+
+    .card>.card-title {
+      border-bottom: solid #1D1D1D;
+      border-bottom-width: .2rem;
+    }
+
+    .card>.card-job {
+      font-size: 1rem;
+      border-bottom: solid #1D1D1D;
+      border-bottom-width: .1rem;
+      background-color: white;
+      font-size: .7rem;
+    }
   }
 
 

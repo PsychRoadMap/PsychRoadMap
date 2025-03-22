@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
-import logo from '../assets/prm.png'
+import logo from '../assets/prm.svg'
 
 
 function Header() {
 
   return (
     <header>
-      <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
+      <nav className="bg-white px-4 lg:px-6 py-2.5">
         <div className="flex flex-wrap justify-center items-center mx-auto max-w-screen-xl">
 
           <Link to="/" className="flex items-center">
