@@ -9,18 +9,32 @@ PHONE SCREEN
 
 @media (min-width: 0px) {
 
+  main {
+    min-height: 85vh;
+  }
+
   .gold {
     background-color: #b5a36a;
+    border: 0px;
   }
 
   a.gold:hover {
     background-color: #9f8d55;
   }
 
+  .secondary {
+    background-color: #0B5A4E;
+    color: white;
+  }
+
+  a.secondary:hover {
+    background-color: #074137;
+  }
+
   body {
     background-color: #EDEBE5 !important;
     overflow-x: hidden;
-    font-family: 'Hind Madurai', sans-serif;
+    font-family: sans-serif;
   }
 
   body a {
@@ -37,10 +51,6 @@ PHONE SCREEN
     max-width: 40vw;
   }
 
-  li>a {
-    margin-left: -2vw;
-  }
-
   span.navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='4' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   }
@@ -50,7 +60,7 @@ PHONE SCREEN
   }
 
   .jumbo-img {
-    background-image: url("../assets/stepping-up-cropped.svg");
+    background-image: url("../assets/stepping-up-g3.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #1D1D1D;
@@ -65,13 +75,16 @@ PHONE SCREEN
   }
 
   p.jumbito-text {
-    margin-top: 1vh;
+    width: 100vw;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
   }
 
   .mask {
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
+    min-height: 40vh;
   }
 
   .index-text {
@@ -108,6 +121,12 @@ PHONE SCREEN
     margin-left: 6vw;
   }
 
+  .select-text .mission-text .button {
+    color: #494A4B;
+    margin-right: 6vw;
+    margin-left: 6vw;
+  }
+
   .select-text p.desc {
     color: #494A4B;
     margin-right: 0vw;
@@ -123,22 +142,74 @@ PHONE SCREEN
   }
 
   .select-text input {
-    color: #b5a36a;
-    width: 20px;
-    height: 20px;
-    accent-color: #b5a36a;
+    color: #0B5A4E;
+    min-width: 20px;
+    min-height: 20px;
+    accent-color: #0B5A4E;
     margin-right: 1em;
   }
 
   .select-text input:checked {
-    color: #b5a36a;
-    accent-color: #b5a36a;
+    color: #0B5A4E;
+    accent-color: #0B5A4E;
   }
 
-  .getStarted {
-    min-width: 40vw;
-    margin-left: 20vw;
-    margin-right: 20vw;
+  input,
+  textarea {
+    background-color: white;
+  }
+
+  .add label,
+  .add input,
+  .delete label,
+  .delete input {
+    margin-right: 6vw;
+    margin-left: 6vw;
+    display: inline-block;
+    width: 80vw;
+  }
+
+  .add textArea {
+    margin-right: 6vw;
+    margin-left: 6vw;
+    width: 80vw;
+  }
+
+  .mastery {
+    max-width: 90vw;
+  }
+
+  .mastery input,
+  .mastery label,
+  .mastery p {
+    margin-left: 5vw;
+  }
+
+  .add p.note {
+    color: #a1a1a1;
+  }
+
+  input:focus {
+    outline: none !important;
+    border-color: #0B5A4E;
+    box-shadow: 0 0 10px #6fbeb3;
+  }
+
+  textarea:focus {
+    outline: none !important;
+    border-color: #0B5A4E;
+    box-shadow: 0 0 10px #6fbeb3;
+  }
+
+  .clear {
+    background-color: #0B5A4E;
+    color: white;
+    max-width: 20vw;
+    border-radius: 5px;
+  }
+
+  .clear:hover {
+    background-color: #074137;
   }
 
   .select-text p.gold {
@@ -167,13 +238,22 @@ PHONE SCREEN
     border-color: #E9E5D6;
   }
 
+  .section button {
+    background-color: white;
+  }
+
+  .section button svg {
+    fill: #0B5A4E;
+  }
+
   .card {
     background-color: white;
-    max-width: 90vw;
+    max-width: 25vw;
+    min-width: 300px;
   }
 
   .card>.card-title {
-    color:#494A4B;
+    color: #494A4B;
     font-size: xx-large;
     font-weight: bold;
     padding: 1em;
@@ -190,8 +270,27 @@ PHONE SCREEN
     border-color: #E9E5D6;
   }
 
+  h2+svg {
+    fill: #0B5A4E;
+  }
+
+  .mission-text {
+    width: 40vh;
+  }
+
+  .mission-img {
+    margin: 0vh 2vw 0vh 2vw;
+    width: 40vh;
+  }
+
+  .mission-img>img {
+    border: #b5a36a solid;
+    border-width: 5px;
+    border-radius: 3%;
+  }
+
   .waiting {
-    background-image: url(../assets/waiting.svg);
+    background-image: url(../assets/waiting-g.svg);
     background-position: center center;
     background-origin: content-box;
     background-size: contain;
@@ -202,9 +301,17 @@ PHONE SCREEN
     min-height: 55vh;
   }
 
+  div.divide-y,
+  div.divide-y div.p-5 {
+    background-color: white;
+    border: 0px;
+  }
+
   footer {
     background-color: #1D1D1D;
     min-height: 3vh;
+    border-top: solid #0B5A4E;
+    border-top-width: 1rem;
   }
 
   footer a {
@@ -217,7 +324,19 @@ PHONE SCREEN
 TABLET SCREEN
 *****/
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+
+  .jumbo-img {
+    background-image: url("../assets/stepping-up-g3.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #1D1D1D;
+    background-position: center center;
+    background-origin: content-box;
+    min-height: 40vh;
+  }
+
+}
 
 
 /***** 
@@ -225,6 +344,16 @@ COMPUTER SCREEN
 *****/
 
 @media (min-width: 1024px) {
+
+  main {
+    min-height: 82vh;
+  }
+
+  .headerbutton {
+    min-width: 8vw;
+    max-width: 11vw;
+    font-size: 1.3rem;
+  }
 
   li>a {
     margin-left: 0vw;
@@ -236,15 +365,14 @@ COMPUTER SCREEN
   }
 
   .jumbito {
-    height: 25vh;
-    max-height: 25vh;
+
     background-color: #1D1D1D;
   }
 
   .mask {
     background-color: transparent;
     height: 100%;
-    width: 0%;
+    width: 100%;
   }
 
   .jumbo-img {
@@ -258,7 +386,7 @@ COMPUTER SCREEN
   }
 
   .jumbito-img {
-    background-image: url("../assets/projections-cropped.svg");
+    background-image: url("../assets/projections-g.svg");
     background-color: #1D1D1D;
     background-position: center center;
     background-origin: content-box;
@@ -266,10 +394,23 @@ COMPUTER SCREEN
     background-repeat: no-repeat;
     background-position: center right;
     image-resolution: from-image;
+    background-position: 65vw;
     padding-top: 5vh;
-    width: 85vw;
+    width: 100%;
     height: 100%;
-    max-height: 30vh;
+    min-height: 20vh;
+  }
+
+  .mission.jumbito-img {
+    background-image: url("../assets/books-g2.svg");
+  }
+
+  .about.jumbito-img {
+    background-image: url("../assets/data-g2.svg");
+  }
+
+  .admin.jumbito-img {
+    background-image: url("../assets/notes.svg");
   }
 
   .mission.jumbito-img {
@@ -281,13 +422,40 @@ COMPUTER SCREEN
   }
 
   p.jumbito-text {
-    margin-top: 3vh;
+    width: 46vw;
+    margin-top: 0vh;
+    margin-bottom: 3vh;
     margin-left: 20vw;
   }
 
+  .clear {
+    background-color: #0B5A4E;
+    color: white;
+    max-width: 6vw;
+    border-radius: 5px;
+  }
+
+  .add label,
+  .add input,
+  .add textArea,
+  .delete label,
+  .delete input {
+    width: 15vw;
+  }
+
+  .delete input.check {
+    width: 20px;
+    height: 20px;
+    margin-right: 0px;
+  }
+
+  .delete input~label {
+    margin-left: 0px;
+    width: 90vw;
+  }
+
   .getStarted {
-    min-width: 10vw;
-    margin-left: 25vw;
+    margin-right: 20vw;
   }
 
   .index-text {
@@ -311,9 +479,87 @@ COMPUTER SCREEN
     min-height: 30vh;
   }
 
+  .select-text .mission-text p,
+  .select-text .mission-text .button {
+    color: #494A4B;
+    margin-right: 0vw;
+    margin-left: 2vw;
+  }
+
   .card {
     max-width: 15vw;
   }
 
+}
+
+@media print {
+
+  html,
+  html p,
+  body,
+  main,
+  .results {
+    color: black;
+    background-color: white;
+  }
+
+  #mobile-menu-2,
+  .jumbito,
+  .text-gray-500,
+  .gold,
+  .button,
+  footer {
+    display: none;
+    background-color: white;
+  }
+
+  header {
+    min-height: 3vh;
+    border-bottom: solid #b5a36a;
+    border-bottom-width: 1rem;
+    background-color: white;
+  }
+
+  nav {
+    min-height: 3vh;
+    border-bottom: solid #1D1D1D;
+    border-bottom-width: 1rem;
+    background-color: white;
+  }
+
+  .results {
+    margin: 0px;
+    background-color: white;
+  }
+
+  .card {
+    border: solid;
+    border-color: black;
+    max-width: 240px;
+    min-width: 240px;
+    margin: 10px 0px 0px 0px;
+  }
+
+  .card>.card-title,
+  .card-title>p {
+    font-size: .8rem;
+    font-weight: bold;
+    text-align: left;
+    padding: 5px;
+    background-color: white;
+  }
+
+  .card>.card-title {
+    border-bottom: solid #1D1D1D;
+    border-bottom-width: .2rem;
+  }
+
+  .card>.card-job {
+    font-size: 1rem;
+    border-bottom: solid #1D1D1D;
+    border-bottom-width: .1rem;
+    background-color: white;
+    font-size: .7rem;
+  }
 
 }

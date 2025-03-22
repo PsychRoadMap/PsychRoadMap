@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import 'flowbite';
@@ -10,6 +8,7 @@ import Select from './pages/select.jsx';
 import Results from './pages/results.jsx';
 import Mission from './pages/mission.jsx';
 import About from './pages/about.jsx';
+import Admin from './pages/admin.jsx'
 import Test from './pages/test.jsx';
 import Footer from './components/footer.jsx';
 
@@ -30,6 +29,7 @@ function App() {
         <Route path="/results" element={<Results />}></Route>
         <Route path="/mission" element={<Mission />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
         <Route path="/test" element={<Test />}></Route>
       </Routes>
       <Footer />

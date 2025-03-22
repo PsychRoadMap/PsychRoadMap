@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import img from '../assets/psychology-ba-zoom.png'
+
 
 function Select() {
 
@@ -22,15 +23,22 @@ function Select() {
         .
       </div>
 
-      <div className="select-text flex justify-center">
-        <div className="waiting my-5">
-          <p> There's no written content for this page yet!</p>
-          <p> Our client has requested that we let them author the substantial written portions, like this page.</p>
-          <p> Stay tuned for the actual content! </p>
+      <div className="select-text flex justify-center flex-wrap">
+        <div className="my-5 mx-2 mission-text">
+          <p className="lg:text-6xl text-3xl py-10"> Our Mission </p>
+          <p>PsychRoadmap is tool to help you, the student, connect knowledge and skills that you have developed in your courses (or will develop in future courses) to potential employment opportunities.</p>
+          <p>Our hope it that this information will help you identify new potential career paths and guide your upcoming course selections.</p>
+          <p>While you are welcome to explore this on your own, it is also a great advising tool.</p>
+          <p>Bring your results to your next advising meeting to discuss your future plans with your advisor.</p>
+          <div className="my-5 button py-10">
+            <a href="https://www.lindenwood.edu/science/social-and-behavioral-sciences/psychology-bs/" class="secondary rounded-xl lg:my-auto lg:w-70 w-60 my-5 px-5 py-5 text-4xl text-center"><b>CONTACT</b></a>
+          </div>
+        </div>
+        <div className="mission-img py-20" >
+          <img src={img} />
         </div>
       </div>
 
-      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     </main >
   );
 };
