@@ -25,7 +25,6 @@ const Select = () => {
         setData(json);
       } catch (e) {
         setLoading(false);
-        setError(e);
       } finally {
         setLoading(false);
       }
