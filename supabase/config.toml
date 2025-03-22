@@ -63,5 +63,4 @@ inspector_port = 8083
 [functions.course-info]
 enabled = true
 verify_jwt = false 
-import_map = "./functions/course-info/deno.json"
 entrypoint = "./functions/course-info/index.ts"
