@@ -1,7 +1,13 @@
 // Setup type definitions for built-in Supabase Runtime APIs
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { createClient } from "jsr:@supabase/supabase-js@2";
-import { corsHeaders } from '../_shared/cors.ts'
+//import { corsHeaders } from '../_shared/cors.ts'
+
+const corsHeaders = {
+  'Access-Control-Allow-Origin': 'https://psychroadmap.netlify.app/', // Or your specific frontend domain
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+};
 
 Deno.serve(async (req) => {
   // This is needed if you're planning to invoke your function from a browser.
