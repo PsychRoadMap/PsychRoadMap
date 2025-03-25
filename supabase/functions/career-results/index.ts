@@ -4,18 +4,14 @@
 
 // Setup type definitions for built-in Supabase Runtime APIs
 import "jsr:@supabase/functions-js/edge-runtime.d.ts"
-
+import { createClient } from "jsr:@supabase/supabase-js@2";
+import {serveCors} from "../_shared/cors.ts"
 console.log("Hello from Functions!")
 
-Deno.serve(async (req) => {
-  const { name } = await req.json()
-  const data = {
-    message: `Hello ${name}!`,
-  }
   async function careerResults(req: Request): Promise<Response> {
-    try {
+ 
       const supabase = createClient(
-        Deno.env.get("SUPABASE_URL") ?? ""
+        Deno.env.get("SUPABASE_URL") ?? "",
         Deno.env.get("SUPABASE_ANON_KEY") ?? "",
       );
       const OnetUsername = 
@@ -27,19 +23,15 @@ Deno.serve(async (req) => {
       console.log(OnetUsername)
       console.log(OnetPassword)
       console.log(supabase)
-
-      )
-
-    }
-
-  }
+	
+      let data = {} 
 
   return new Response(
     JSON.stringify(data),
     { headers: { "Content-Type": "application/json" } },
   )
-})
-
+}
+serveCors(careerResults)
 /* To invoke locally:
 
   1. Run `supabase start` (see: https://supabase.com/docs/reference/cli/supabase-start)
