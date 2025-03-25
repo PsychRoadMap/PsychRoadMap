@@ -1,8 +1,9 @@
 // Setup type definitions for built-in Supabase Runtime APIs
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { createClient } from "jsr:@supabase/supabase-js@2";
+import { serveCors } from "../_shared/cors.ts";
 
-Deno.serve(async (req) => {
+async function courseInfo(req: Request): Promise<Response> {
   try {
     const supabase = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
@@ -19,6 +20,10 @@ Deno.serve(async (req) => {
       status: 200,
     });
   } catch (err) {
-    return new Response(String(err?.message ?? err), { status: 500 });
+    return new Response(String(err?.message ?? err), {
+      status: 500,
+    });
   }
-});
+}
+
+serveCors(courseInfo);
