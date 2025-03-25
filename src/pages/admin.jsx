@@ -1,11 +1,17 @@
 import React from "react";
 
+import { useState, useEffect } from "react";
+
 import { Label, TextInput, Textarea } from "flowbite-react";
 import { Checkbox } from "flowbite-react";
 
 import { Link } from "react-router-dom";
 
-function Select() {
+function Admin() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <main>
@@ -583,4 +589,4 @@ function Select() {
   );
 };
 
-export default Select;
+export default Admin;

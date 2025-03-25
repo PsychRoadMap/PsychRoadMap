@@ -279,6 +279,9 @@ PHONE SCREEN
   .mission-img {
     margin: 0vh 2vw 0vh 2vw;
     width: 40vh;
+    border: #b5a36a solid;
+    border-width: 5px;
+    border-radius: 3%;
   }
 
   .mission-img>img {
@@ -319,7 +322,7 @@ PHONE SCREEN
   .html2pdf__container {
 
     body {
-      height: 80vh;
+      height: 85vh;
     }
 
     html,
