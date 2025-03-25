@@ -1,20 +1,9 @@
 // Setup type definitions for built-in Supabase Runtime APIs
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { createClient } from "jsr:@supabase/supabase-js@2";
-//import { corsHeaders } from '../_shared/cors.ts'
+import { serveCors } from "../_shared/cors.ts";
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': 'https://psychroadmap.netlify.app', // Or your specific frontend domain
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-};
-
-Deno.serve(async (req) => {
-  // This is needed if you're planning to invoke your function from a browser.
-  if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders })
-  }
-
+async function courseInfo(req: Request): Promise<Response> {
   try {
     const supabase = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
@@ -27,10 +16,14 @@ Deno.serve(async (req) => {
     }
 
     return new Response(JSON.stringify({ data }), {
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json" },
       status: 200,
     });
   } catch (err) {
-    return new Response(String(err?.message ?? err), { headers: corsHeaders, status: 500 });
+    return new Response(String(err?.message ?? err), {
+      status: 500,
+    });
   }
-});
+}
+
+serveCors(courseInfo);
