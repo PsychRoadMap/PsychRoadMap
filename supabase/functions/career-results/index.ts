@@ -5,27 +5,20 @@
 // Setup type definitions for built-in Supabase Runtime APIs
 import "jsr:@supabase/functions-js/edge-runtime.d.ts"
 import { createClient } from "jsr:@supabase/supabase-js@2";
-import {serveCors} from "../_shared/cors.ts"
-console.log("Hello from Functions!")
+import { serveCors } from "../_shared/cors.ts"
 
-  async function careerResults(req: Request): Promise<Response> {
- 
-      const supabase = createClient(
-        Deno.env.get("SUPABASE_URL") ?? "",
-        Deno.env.get("SUPABASE_ANON_KEY") ?? "",
-      );
-      const OnetUsername = 
-        Deno.env.get("ONET_USERNAME") ?? ""
-      const OnetPassword = 
-        Deno.env.get("ONET_PASSWORD") ?? ""
-        
-      
-      console.log(OnetUsername)
-      console.log(OnetPassword)
-      console.log(supabase)
-	
-      let data = {} 
+async function careerResults(req: Request): Promise<Response> {
+  const supabase = createClient(
+    Deno.env.get("SUPABASE_URL") ?? "",
+    Deno.env.get("SUPABASE_ANON_KEY") ?? "",
+  );
+  
+  const OnetUsername = Deno.env.get("ONET_USERNAME") ?? ""
+  const OnetPassword = Deno.env.get("ONET_PASSWORD") ?? ""
 
+  console.log(await req.json());
+
+  let data = {}
   return new Response(
     JSON.stringify(data),
     { headers: { "Content-Type": "application/json" } },
