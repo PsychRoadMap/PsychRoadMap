@@ -19,34 +19,34 @@ async function courseInfo(req: Request): Promise<Response> {
 
   try {
     // We're going to try and populate this
-    let courseQuery;
+    let courseData, courseError;
 
     if (filter) {
       console.log(`Filtering courses for '${filter}'`);
 
       // We only need the FK/PKs from the Develops table as we just need to know if the course has been rated 
       // Currently all filters require knowledge of course ratings so we will always need to pull this data
-      const developsQuery = await supabase.from(DEVELOPS_TABLE).select("department", "course_code");
-      if (developsQuery.error) {
-        throw developsQuery.error;
+      const { developsData, developsError } = await supabase.from(DEVELOPS_TABLE).select("department", "course_code");
+      if (developsError) {
+        throw developsError;
       }
 
       // Change the query based on filtering method, probably a better way to do this
       switch (filter) {
         case "rated":
-          courseQuery = await supabase.from(COURSE_TABLE).select("*").filter("department", "in", developsQuery.data);
+          { courseData, courseError } = await supabase.from(COURSE_TABLE).select("*").filter("department", "in", developsData);
           break;
         default:
           throw Error("Unknown filtering method.");
       }
 
       // Make sure everything worked
-      if (courseQuery.error) {
-        throw courseQuery.error;
+      if (courseError) {
+        throw courseError;
       }
     }
 
-    return new Response(JSON.stringify({ data: courseQuery.data }), {
+    return new Response(JSON.stringify({ data: courseData }), {
       headers: { "Content-Type": "application/json" },
       status: 200,
     });
