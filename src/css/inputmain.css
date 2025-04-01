@@ -290,16 +290,10 @@ PHONE SCREEN
     border-radius: 3%;
   }
 
-  .waiting {
-    background-image: url(../assets/waiting-g.svg);
-    background-position: center center;
-    background-origin: content-box;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center right;
-    image-resolution: from-image;
-    width: 100%;
-    min-height: 55vh;
+  .spacer {
+    clear: both;
+    visibility: hidden;
+    padding-bottom: 1vw;
   }
 
   div.divide-y,
@@ -309,6 +303,7 @@ PHONE SCREEN
   }
 
   footer {
+    position: relative;
     background-color: #1D1D1D;
     min-height: 3vh;
     border-top: solid #0B5A4E;
@@ -430,6 +425,8 @@ COMPUTER SCREEN
     min-width: 8vw;
     max-width: 11vw;
     font-size: 1.3rem;
+    padding-left: 1vw;
+    padding-right: 1vw;
   }
 
   li>a {

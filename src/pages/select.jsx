@@ -9,6 +9,10 @@ import Cluster from "../components/cluster.jsx";
 
 const Select = () => {
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [checkboxes, setCheckboxes] = useState({});

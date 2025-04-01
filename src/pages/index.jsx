@@ -1,14 +1,16 @@
 import React from "react";
 
+import { useState, useEffect } from "react";
+
 import { Link } from "react-router-dom";
 
 import psychdept from "../assets/psychology-ba-zoom.webp"
 
 const Index = () => {
 
-  window.onLoad = function () {
-    document.documentElement.scrollTo(0, 0);
-  }
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <main>
@@ -40,6 +42,7 @@ const Index = () => {
           Bring your results to your next advising meeting to discuss your future plans with your advisor.<br />
           Use PsychRoadMap to stop, take a look at where you are, and help decide where you want to go.
         </p>
+        <div class="spacer"></div>
       </div>
     </main>
   );

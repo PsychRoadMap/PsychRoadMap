@@ -58,7 +58,8 @@ function Cluster({ data, cluster, checkboxes, setCheckboxes, handleCheckboxChang
 
   return (
     <>
-      <p className="gold my-5 py-2 text-3xl flex justify-between"><span><b>{cluster} Coursework</b></span><span><button className="text-base border border-black py-1 px-2 clear" id={cluster} onClick={clearSection}>Clear</button></span></p>
+      <p className="gold my-5 py-2 text-3xl flex justify-between"><span><b>{cluster} Coursework</b></span><span>
+        <button className="text-base border border-black py-1 px-2 clear" id={cluster} onClick={clearSection}>Clear</button></span></p>
       <Accordion flush={true} alwaysOpen={true} collapseAll={true}>
 
         {data.data.map((course) => {

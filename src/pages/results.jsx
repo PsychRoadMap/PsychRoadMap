@@ -1,10 +1,16 @@
 import React from "react";
 
+import { useState, useEffect } from "react";
+
 import html2pdf from "html2pdf.js";
 
 import { Link } from "react-router-dom";
 
-function Select() {
+function Results() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <main>
@@ -151,4 +157,4 @@ function Select() {
   );
 };
 
-export default Select;
+export default Results;
