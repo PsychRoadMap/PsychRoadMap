@@ -18,7 +18,6 @@ async function courseInfo(req: Request): Promise<Response> {
 
   try {
     // We're going to try and populate this
-    // let courseData, courseError;
     let courseQuery;
 
     if (filter) {

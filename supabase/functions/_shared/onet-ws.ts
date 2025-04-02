@@ -22,15 +22,18 @@ export default class ONetWS {
             method: 'GET',
             headers: headers,
         }).then((response) => {
-            if (!response.ok) {
-                throw new Error(`Error: ${response.status} ${response.statusText}`);
-            }
+            if (!response.ok) throw new Error(`Error: ${response.status} ${response.statusText}`);
             return response.json();
         })
     }
 
     db_get(db_name: string, ...filters: string[]) {
-        let response = this.ws_get("database/rows/" + db_name);
-        
+        let query = "database/rows/" + db_name;
+        filters.forEach((element, idx) => {
+            query += (idx == 0) ? "?" : "&"; 
+            query += element;             
+        });
+
+        return this.ws_get(query);
     }
 }
