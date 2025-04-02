@@ -1,38 +1,28 @@
-// Follow this setup guide to integrate the Deno language server with your editor:
-// https://deno.land/manual/getting_started/setup_your_environment
-// This enables autocomplete, go to definition, etc.
-
-// Setup type definitions for built-in Supabase Runtime APIs
 import "jsr:@supabase/functions-js/edge-runtime.d.ts"
 import { createClient } from "jsr:@supabase/supabase-js@2";
-import { serveCors } from "../_shared/cors.ts"
+import { serveCors } from "../_shared/cors.ts";
+import ONetWS from "../_shared/onet-ws.ts";
+
+const ONET_USERNAME = Deno.env.get("ONET_USERNAME") ?? "";
+const ONET_PASSWORD = Deno.env.get("ONET_PASSWORD") ?? "";
 
 async function careerResults(req: Request): Promise<Response> {
-  const supabase = createClient(
-    Deno.env.get("SUPABASE_URL") ?? "",
-    Deno.env.get("SUPABASE_ANON_KEY") ?? "",
-  );
+  // const supabase = createClient(
+  //   Deno.env.get("SUPABASE_URL") ?? "",
+  //   Deno.env.get("SUPABASE_ANON_KEY") ?? "",
+  // );
+
+  // let selectedCourses = await req.json();
+  let onet = new ONetWS(ONET_USERNAME, ONET_PASSWORD);
+  let data = await onet.db_get("knowledge", "filter=scale_id.eq.LV", "filter=data_value.lte.5");
+  //let data = await onet.db_get("database/rows/knowledge?filter=scale_id.eq.LV&filter=data_value.lte.5");
   
-  const OnetUsername = Deno.env.get("ONET_USERNAME") ?? ""
-  const OnetPassword = Deno.env.get("ONET_PASSWORD") ?? ""
+  console.log(data);
 
-  console.log(await req.json());
-
-  let data = {}
   return new Response(
     JSON.stringify(data),
     { headers: { "Content-Type": "application/json" } },
   )
 }
+
 serveCors(careerResults)
-/* To invoke locally:
-
-  1. Run `supabase start` (see: https://supabase.com/docs/reference/cli/supabase-start)
-  2. Make an HTTP request:
-
-  curl -i --location --request POST 'http://127.0.0.1:54321/functions/v1/career-results' \
-    --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0' \
-    --header 'Content-Type: application/json' \
-    --data '{"name":"Functions"}'
-
-*/

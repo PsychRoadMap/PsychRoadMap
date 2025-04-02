@@ -15,8 +15,8 @@ const ENDPOINT = "/functions/v1/course-info";
 // Register and run the tests
 Deno.test("Test course filters", async () => {
     // Create supabase client for test
-    if (!SUPABASE_URL) throw new Error('supabaseUrl is required.'); 
-    if (!SUPABASE_ANON_KEY) throw new Error('supabaseKey is required.');
+    if (!SUPABASE_URL) throw new Error('SUPABASE_URL is required.'); 
+    if (!SUPABASE_ANON_KEY) throw new Error('SUPABASE_ANON_KEY is required.');
     const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { 
         auth: { 
             autoRefreshToken: false, 
