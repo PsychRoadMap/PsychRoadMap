@@ -40,7 +40,7 @@ async function courseInfo(req: Request): Promise<Response> {
       throw courseQuery.error;
     }
 
-    return new Response(JSON.stringify(courseQuery.data), {
+    return new Response(JSON.stringify({ data: courseQuery.data }), {
       headers: { "Content-Type": "application/json" },
       status: 200,
     });

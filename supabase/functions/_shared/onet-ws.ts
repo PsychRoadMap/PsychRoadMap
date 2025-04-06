@@ -1,8 +1,8 @@
 import { encodeBase64 } from "jsr:@std/encoding/base64";
 
-const ONET_WS_URL = 'https://services.onetcenter.org/ws';
+const ONET_WS_URL = 'https://services.onetcenter.org/v1.9/ws';
 
-export default class ONetWS {
+export class ONetWS {
     username: string;
     password: string;
     
@@ -37,3 +37,21 @@ export default class ONetWS {
         return this.ws_get(query);
     }
 }
+
+export type ONetCareer = {
+        onetsoc_code: string,
+        title: string,
+        element_id: string,
+        element_name: string,
+        scale_id: string,
+        scale_name: string,
+        data_value: number,
+        n: number,
+        standard_error: number,
+        lower_ci_bound: number,
+        upper_ci_bound: number,
+        recommend_suppress: string,
+        not_relevant: string,
+        date_updated: string,
+        domain_source: string
+};

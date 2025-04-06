@@ -29,12 +29,11 @@ Deno.test("Test career results", async () => {
         },
     ]
 
-    let response = await fetch(SUPABASE_URL + ENDPOINT, {
+    const response = await fetch(SUPABASE_URL + ENDPOINT, {
         method: "POST",
         body: JSON.stringify({ courses }),
     });
 
-    let results = await response.json();
-    console.log(results);
-    assert(false, "");
+    const { results } = await response.json();
+    assert(results.length >= 1, "No results found");
 })
