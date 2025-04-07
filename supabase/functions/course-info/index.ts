@@ -32,7 +32,7 @@ async function courseInfo(req: Request): Promise<Response> {
           throw Error("Unknown filtering method.");
       }
     } else {
-      courseQuery = await supabase.from(COURSE_TABLE).select("*");
+      courseQuery = await supabase.from(COURSE_TABLE).select("*").order("course_code", { ascending: true });
     }
 
     // Make sure everything worked

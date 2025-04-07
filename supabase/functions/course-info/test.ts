@@ -27,7 +27,7 @@ Deno.test("Test course filters", async () => {
 
     // Call the endpoint with the filter parameter
     const resp = await fetch(SUPABASE_URL + ENDPOINT + "?filter=rated");
-    const ratedCourses = await resp.json();
+    const { data: ratedCourses } = await resp.json();
 
     // Query the Develops table from Supabase
     const { data: developsCourses, error } = await supabase
