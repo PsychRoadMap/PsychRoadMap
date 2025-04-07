@@ -1,7 +1,7 @@
 // deno-lint-ignore-file prefer-const
 // https://supabase.com/docs/guides/functions/cors
 export const corsHeaders = {
-  "Access-Control-Allow-Origin": "https://psychroadmap.netlify.app",
+  "Access-Control-Allow-Origin": "*", // "https://psychroadmap.netlify.app",
   "Access-Control-Allow-Headers":
     "authorization, x-client-info, apikey, content-type",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
