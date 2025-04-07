@@ -1,36 +1,53 @@
 // Setup type definitions for built-in Supabase Runtime APIs
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { createClient } from "jsr:@supabase/supabase-js@2";
-//import { corsHeaders } from '../_shared/cors.ts'
+import { serveCors } from "../_shared/cors.ts";
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*', // Or your specific frontend domain
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-};
+const COURSE_TABLE = "Course";
 
-Deno.serve(async (req) => {
-  // This is needed if you're planning to invoke your function from a browser.
-  if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders })
-  }
+async function courseInfo(req: Request): Promise<Response> {
+  const supabase = createClient(
+    Deno.env.get("SUPABASE_URL") ?? "",
+    Deno.env.get("SUPABASE_ANON_KEY") ?? "",
+  );
+
+  // This functions has optional params that can be specified in the URL
+  // We want to grab these to ensure we're giving back the right data
+  const url = new URL(req.url);
+  const filter = url.searchParams.get("filter"); // Can be one of "rated"
 
   try {
-    const supabase = createClient(
-      Deno.env.get("SUPABASE_URL") ?? "",
-      Deno.env.get("SUPABASE_ANON_KEY") ?? "",
-    );
+    // We're going to try and populate this
+    let courseQuery;
 
-    const { data, error } = await supabase.from("Course").select("*");
-    if (error) {
-      throw error;
+    if (filter) {
+      console.log(`Filtering courses for '${filter}'`);
+
+      // Change the query based on filtering method, probably a better way to do this
+      switch (filter) {
+        case "rated":
+          courseQuery = await supabase.rpc("select_rated_courses");
+          break;
+        default:
+          throw Error("Unknown filtering method.");
+      }
+    } else {
+      courseQuery = await supabase.from(COURSE_TABLE).select("*");
     }
 
-    return new Response(JSON.stringify({ data }), {
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    // Make sure everything worked
+    if (courseQuery.error) {
+      throw courseQuery.error;
+    }
+
+    return new Response(JSON.stringify({ data: courseQuery.data }), {
+      headers: { "Content-Type": "application/json" },
       status: 200,
     });
-  } catch (err) {
-    return new Response(String(err?.message ?? err), { headers: corsHeaders, status: 500 });
+  } catch (e) {
+    console.error(`Caught client exception: ${e}`);
+    return new Response(String(e), { status: 500 });
   }
-});
+}
+
+serveCors(courseInfo);

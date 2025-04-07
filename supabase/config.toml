@@ -16,7 +16,7 @@ max_rows = 1000
 
 [db]
 # Port to use for the local database URL.
-port = 54322
+port = 54342
 # Port used by db diff command to initialize the shadow database.
 shadow_port = 54320
 # The database major version to use. This has to be the same as your remote database's. Run `SHOW
@@ -63,4 +63,11 @@ inspector_port = 8083
 [functions.course-info]
 enabled = true
 verify_jwt = false 
+import_map = "./functions/course-info/deno.json"
 entrypoint = "./functions/course-info/index.ts"
+
+[functions.career-results]
+enabled = true
+verify_jwt = false
+import_map = "./functions/career-results/deno.json"
+entrypoint = "./functions/career-results/index.ts"
