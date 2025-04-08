@@ -244,6 +244,10 @@ PHONE SCREEN
     fill: #0B5A4E;
   }
 
+  .section button.p-5, .section div.p-5 {
+    padding: 5px;
+  }
+
   .card {
     background-color: white;
     max-width: 25vw;
@@ -300,6 +304,47 @@ PHONE SCREEN
   div.divide-y div.p-5 {
     background-color: white;
     border: 0px;
+  }
+
+  .select-text p.no-m {
+    color: darkred;
+  }
+
+  .listBox {
+    background-image: none;
+    height: 50vh;
+  }
+
+  select[multiple]:focus {
+    box-shadow: none;
+    border-color: #0B5A4E;
+  }
+
+  select[multiple] option {
+    border: solid lightgray;
+    border-width: 2px;
+    margin-top: -2px;
+  }
+
+  select[multiple]:focus option:checked {
+    background: #0B5A4E linear-gradient(0deg, #0B5A4E 0%, #0B5A4E 100%);
+  }
+
+  .bundle .flex {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .bundle.big .flex {
+    width: 400px;
+  }
+
+  .bundle .flex label {
+    font-size: small;
+  }
+
+  .max-w-7xl {
+    max-width: 80rem;
   }
 
   footer {
@@ -388,48 +433,6 @@ PHONE SCREEN
       font-size: .7rem;
     }
 
-  }
-
-  .select-text p.no-m {
-    color: darkred;
-  }
-
-  .listBox {
-    background-image: none;
-    height: 50vh;
-  }
-
-  select[multiple]:focus {
-    box-shadow: none;
-    border-color: #0B5A4E;
-  }
-
-  select[multiple] option {
-    border: solid lightgray;
-    border-width: 2px;
-    margin-top: -2px;
-  }
-
-  select[multiple]:focus option:checked {
-    background: #0B5A4E linear-gradient(0deg, #0B5A4E 0%, #0B5A4E 100%);
-  }
-
-  .modal {
-    width: 50vw;
-    height: 50vh;
-  }
-
-  .bundle .flex {
-    margin-left: 2px;
-    margin-right: 2px;
-  }
-
-  .bundle.big .flex {
-    width: 400px;
-  }
-
-  .bundle .flex label {
-    font-size: small;
   }
 
 

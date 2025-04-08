@@ -62,18 +62,29 @@ function Admin() {
   const updateCurr = (id) => {
 
     var listBox = document.getElementById("listBox");
-    var value = document.getElementById("listBox").value;
-    var split = value.split(" - ");
-    setCurrCourseID(split[0]);
-    setCurrCourseName(split[1]);
-    setCurrCourse(data.data[listBox.selectedIndex]);
 
-    if (id.target.id == "add")
+    if (listBox.selectedIndex > 0) {
+      document.getElementById("noSelect").classList.add("hidden");
+      var value = document.getElementById("listBox").value;
+      var split = value.split(" - ");
+      setCurrCourseID(split[0]);
+      setCurrCourseName(split[1]);
+      setCurrCourse(data.data[listBox.selectedIndex]);
+
+      if (id.target.id == "edit")
+        setOpenEditModal(true);
+      else if (id.target.id == "del")
+        setOpenDelModal(true);
+      else if (id.target.id == "add")
+        setOpenAddModal(true);
+    }
+    else if (id.target.id == "add") {
       setOpenAddModal(true);
-    else if (id.target.id == "edit")
-      setOpenEditModal(true);
-    else
-      setOpenDelModal(true);
+    }
+    else {
+      document.getElementById("noSelect").classList.remove("hidden");
+      console.log("NO COURSE SELECTED");
+    }
   }
 
   if (loading) {
@@ -139,11 +150,12 @@ function Admin() {
               )};
             </select>
 
-            <div className="flex justify-center mb-5">
+            <div className="flex justify-center mb-2">
               <button id="add" className="m-2 p-1 clear" onClick={updateCurr}>Add New Course</button>
               <button id="edit" className="m-2 p-1 clear" onClick={updateCurr}>Edit Course</button>
               <button id="del" className="m-2 p-1 clear" onClick={updateCurr}>Delete Course</button>
             </div>
+            <p id="noSelect" className="text-center font-bold mb-5 hidden">Please select a course.</p>
 
           </div>
 
@@ -1236,10 +1248,9 @@ function Admin() {
                   <Label htmlFor="courseID">Re-enter course ID:</Label>
                 </div>
                 <TextInput
-required                   id="courseID"
+                  required id="courseID"
                   placeholder={currCourseID}
                   onChange={() => document.getElementById}
-                  required
                 />
                 <div className="flex justify-center">
                   <button id="confirmDel" className="mt-2 p-2 mx-2 clear min-w-30" onClick={checkID}>Delete Course</button>
