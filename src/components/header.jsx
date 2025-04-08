@@ -1,22 +1,25 @@
 import React, { useEffect } from "react";
-
 import { Link } from "react-router-dom";
 
 import logo from '../assets/prm.svg'
 
-
 function Header() {
 
+  // adds event listener to make sure hamburger menu is clickable
   useEffect(() => {
+    // defines necessary elements
     const hamburgerButton = document.querySelector('[data-collapse-toggle="mobile-menu"]');
     const mobileMenu = document.getElementById('mobile-menu');
 
+    // defines toggle behavior
     const toggleMenu = () => {
       mobileMenu.classList.toggle('hidden');
     };
 
+    // adds event listener
     hamburgerButton.addEventListener('click', toggleMenu);
 
+    // cleans up event listener to prevent duplicates
     return () => {
       hamburgerButton.removeEventListener('click', toggleMenu);
     };
@@ -27,9 +30,11 @@ function Header() {
       <nav className="bg-white px-4 lg:px-6 py-2.5">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
 
+          {/* logo image links to index */}
           <Link to="/" className="flex items-center">
             <img src={logo} className="mr-3 h-32 logo" alt="PsychRoadMap Logo" />
             <div className="logo-text">
+              {/* website title */}
               <p className="self-center lg:text-4xl text-2xl font-semibold whitespace-nowrap">
                 PsychRoadMap <br />
                 <span className="lg:text-2xl text-base italic text-wrap">Mapping skills to career psych-cess!</span>
@@ -37,6 +42,7 @@ function Header() {
             </div>
           </Link>
 
+          {/* hamburger menu */}
           <div className="flex items-center lg:order-2">
             <button data-collapse-toggle="mobile-menu" type="button" className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="mobile-menu" aria-expanded="false">
               <span className="sr-only">Open main menu</span>
@@ -45,16 +51,20 @@ function Header() {
             </button>
           </div>
 
+          {/* navigation buttons */}
           <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu">
             <ul className="flex flex-col mt-4 lg:flex-row lg:space-x-8 lg:mt-0">
               <li>
+                {/* links to index page */}
                 <Link to="/" className="block lg:w-50 lg:px-5 lg:py-5 text-2xl gold border-b text-center mb-0.5 headerbutton"><b>HOME</b></Link>
               </li>
               <li>
+                {/* links to selection page */}
                 <Link to="/select" className="block lg:w-50 lg:px-5 lg:py-5 text-2xl gold border-b text-center mb-0.5 headerbutton"><b>START</b></Link>
               </li>
               <li>
-              <a href="https://www.lindenwood.edu/science/social-and-behavioral-sciences/psychology-bs/" className="block lg:w-50 lg:px-5 lg:py-5 text-2xl gold border-b text-center headerbutton"><b>CONTACT</b></a>
+                {/* links to lindenwood psychology page */}
+                <a href="https://www.lindenwood.edu/science/social-and-behavioral-sciences/psychology-bs/" className="block lg:w-50 lg:px-5 lg:py-5 text-2xl gold border-b text-center headerbutton"><b>CONTACT</b></a>
               </li>
             </ul>
           </div>
