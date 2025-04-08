@@ -359,6 +359,15 @@ PHONE SCREEN
     color: gray;
   }
 
+  @media (prefers-color-scheme: dark) {
+    label, h3 {
+      color: black;
+    }
+    input, textarea {
+      border-color: #D1D5D8;
+    }
+  }
+
   .html2pdf__container {
 
     body {

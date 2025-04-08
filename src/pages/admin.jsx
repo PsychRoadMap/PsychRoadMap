@@ -2,6 +2,8 @@ import React from "react";
 
 import { useState, useEffect } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import { Label, TextInput, Textarea, Modal, ModalBody, ModalHeader, Button } from "flowbite-react";
 import { Checkbox } from "flowbite-react";
 
@@ -24,7 +26,6 @@ function Admin() {
   const [currCourseID, setCurrCourseID] = useState("null");
   const [currCourseName, setCurrCourseName] = useState("null");
 
-  const [email, setEmail] = useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -50,13 +51,16 @@ function Admin() {
     setOpenAddModal(false);
     setOpenEditModal(false);
     setOpenDelModal(false);
-    setEmail("");
   }
 
   function checkID() {
     if (document.getElementById("courseID").value == currCourseID) {
       onCloseModal();
     }
+  }
+
+  function logOut() {
+    location.reload();
   }
 
   const updateCurr = (id) => {
@@ -129,9 +133,9 @@ function Admin() {
 
         <div className="select-text">
           <div className="my-5">
-            <p className="lg:text-6xl text-3xl py-10"> Welcome to the admin panel. </p>
+            <p className="lg:text-6xl text-3xl py-10 flex justify-between content-center"> Welcome to the admin panel. <span className="text-base content-center"><button id="logOut" className="m-2 p-1 clear" onClick={logOut}>Log Out</button></span></p>
             <p> Use this page to add, remove or edit courses on the website. </p>
-            <p> Once you leave or refresh this page, you will be logged out. </p>
+            <p> Please remember to log out when you are finished. </p>
           </div>
 
           <div className="add flex flex-col">
