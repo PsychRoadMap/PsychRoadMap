@@ -364,6 +364,7 @@ PHONE SCREEN
       color: black;
     }
     input, textarea {
+      color: black;
       border-color: #D1D5D8;
     }
   }
