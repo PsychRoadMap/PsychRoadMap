@@ -20,7 +20,7 @@ The PsychRoadMap frontend is built using [React](https://react.dev/), [Vite](htt
 
 The PsychRoadMap backend is built using [Supabase](https://supabase.com/).
 
-For local development:
+**For local development:**
 
 1. Install [Docker](https://www.docker.com/)
 2. Install [Deno](https://deno.com/)
@@ -28,8 +28,8 @@ For local development:
 4. Add `ONET_USERNAME` and `ONET_PASSWORD` to `supabase/.env`
 5. Start Supabase locally `supabase start --env-file .env`
 
-View logs: `supabase functions serve`
-Run unit tests: Inside the [`supabase/`](./supabase/) directory run `deno test --allow-all`.
+**View logs:** `supabase functions serve`\
+**Run unit tests:** Inside the [`supabase/`](./supabase/) directory run `deno test --allow-all`.
 
 ## Deployment
 
