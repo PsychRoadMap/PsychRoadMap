@@ -72,7 +72,7 @@ async function careerResults(req: Request): Promise<Response> {
 
     console.log(careerResults);
     // Deduplicate results and count the occurences of each career
-    const numMastery = highestRatings.size;
+    let numMastery = highestRatings.size;
     const mapCareer = new Map<string, { count: number, data: ONetCareer }>();
     for (const row of careerResults) {
       if (mapCareer.has(row["title"])) {
@@ -85,13 +85,16 @@ async function careerResults(req: Request): Promise<Response> {
       }
     }
 
+    console.log(`careers: ${mapCareer}`);
+
+    numMastery -= 15; // TEST
     // Remove map entries with count < numMastery
     const filteredCareerResults = Array.from(mapCareer.entries())
       .filter(([_, value]) => value.count >= numMastery)
       .map(([_, value]) => {
         const { count, data } = value;
         return data;
-    });
+      });
 
     console.log(filteredCareerResults);
     return new Response(
