@@ -89,6 +89,7 @@ async function careerResults(req: Request): Promise<Response> {
         return data;
       });
 
+    console.log(filteredCareerResults);
     return new Response(
       JSON.stringify({ results: filteredCareerResults }),
       { headers: { "Content-Type": "application/json" } },
