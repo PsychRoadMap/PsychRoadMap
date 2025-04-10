@@ -20,6 +20,8 @@ async function careerResults(req: Request): Promise<Response> {
 
     // Pull request parameters
     const { courses } = await req.json();
+    if(coures == null) throw Error("Not enough params given as 'courses'");        
+    console.log(courses);
 
     // Collect ratings for selected courses from db
     const ratings: LVRating[] = [];
@@ -43,6 +45,7 @@ async function careerResults(req: Request): Promise<Response> {
         highestRatings.set(key, rating);
       }
     }
+    console.log(highestRatings)
 
     // TODO? filter out masteries with value of 0
     // TODO? should we care about all requirements?
@@ -67,6 +70,7 @@ async function careerResults(req: Request): Promise<Response> {
       }
     }
 
+    console.log(careerResults);
     // Deduplicate results and count the occurences of each career
     const numMastery = highestRatings.size;
     const mapCareer = new Map<string, { count: number, data: ONetCareer }>();
@@ -87,7 +91,7 @@ async function careerResults(req: Request): Promise<Response> {
       .map(([_, value]) => {
         const { count, data } = value;
         return data;
-      });
+    });
 
     console.log(filteredCareerResults);
     return new Response(
