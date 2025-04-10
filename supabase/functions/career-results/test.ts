@@ -35,5 +35,6 @@ Deno.test("Test career results", async () => {
     });
 
     const { results } = await response.json();
+    console.log(results);
     assert(results.length >= 1, "No results found");
 })
