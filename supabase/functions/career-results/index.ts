@@ -56,7 +56,7 @@ async function careerResults(req: Request): Promise<Response> {
       const [mastery_name, mastery_domain] = key.split("-");
 
       const data = await onet.db_get(
-        mastery_domain.toLowerCase(),
+        mastery_domain.toLowerCase().split(' ').join('_'),
         "filter=scale_id.eq.LV",
         `filter=data_value.lte.${value.lv_rating}`,
         `filter=element_name.eq.${mastery_name}`
