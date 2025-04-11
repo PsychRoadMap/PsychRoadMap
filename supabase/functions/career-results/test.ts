@@ -15,18 +15,58 @@ const ENDPOINT = "/functions/v1/career-results";
 // Register and run the tests
 Deno.test("Test career results", async () => {
     const courses = [
-        {
-            department: "PSY",
-            course_code: 15700,
+        { 
+            department: 'PSY', 
+            course_code: 10000 
         },
         {
-            department: "PSY",
-            course_code: 18100,
+            department: 'PSY',
+            course_code: 30900
         },
         {
-            department: "PSY",
-            course_code: 39012,
+            department: 'PSY',
+            course_code: 32100
         },
+        {
+            department: 'PSY',
+            course_code: 39028
+        },
+        {
+            department: 'PSY',
+            course_code: 33000
+        },
+        {
+            department: 'PSY',
+            course_code: 33100
+        },
+        {
+            department: 'PSY',
+            course_code: 33200
+        },
+        {
+            department: 'PSY',
+            course_code: 18100
+        },
+        {
+            department: 'PSY',
+            course_code: 21200,
+        },
+        {
+            department: 'PSY',
+            course_code: 21500,
+        },
+        {
+            department: 'PSY',
+            course_code: 30800,
+        },
+        {
+            department: 'PSY',
+            course_code: 31200,
+        },
+        {
+            department: 'PSY',
+            course_code: 31300,
+        }
     ]
 
     const response = await fetch(SUPABASE_URL + ENDPOINT, {

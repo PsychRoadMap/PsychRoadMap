@@ -1,3 +1,4 @@
+-- This SQL file contains the function to select courses based on the department and course code from the "Develops" table.
 create or replace function select_rated_courses() returns setof "public"."Course" as $$
     select * 
     from "public"."Course" 

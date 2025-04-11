@@ -20,8 +20,7 @@ async function careerResults(req: Request): Promise<Response> {
 
     // Pull request parameters
     const { courses } = await req.json();
-    if(coures == null) throw Error("Not enough params given as 'courses'");        
-    console.log(courses);
+    console.log("Got courses:", courses);
 
     // Collect ratings for selected courses from db
     const ratings: LVRating[] = [];
@@ -33,8 +32,11 @@ async function careerResults(req: Request): Promise<Response> {
 
       if (error) throw error;
 
+      // Remove ratings with value of 0
+      const filteredData = data.filter((rating: LVRating) =>  rating.lv_rating > 0);
+      
       // Append results
-      ratings.push(...data as LVRating[]);
+      ratings.push(...filteredData as LVRating[]);
     }
 
     // Find highest rating for each mastery
@@ -45,15 +47,14 @@ async function careerResults(req: Request): Promise<Response> {
         highestRatings.set(key, rating);
       }
     }
-    console.log(highestRatings)
-
-    // TODO? filter out masteries with value of 0
-    // TODO? should we care about all requirements?
+   
+    // "Strictness" is the number of qualified masteries required for a career to be recommended
+    let numMastery = highestRatings.size;
 
     // O*NET REST API helper
     const onet = new ONetWS(ONET_USERNAME, ONET_PASSWORD);
 
-    //
+    // Get careers for each mastery that the user is qualified for just one mastery
     const careerResults: ONetCareer[] = [];
     for (const [key, value] of highestRatings.entries()) {
       const [mastery_name, mastery_domain] = key.split("-");
@@ -66,13 +67,16 @@ async function careerResults(req: Request): Promise<Response> {
       );
 
       if (Object.hasOwn(data, "row")) {
+        // If we find irrelevant results reduce strictness
+        // There isn't much justification I can give for this other than it works
+        data["row"].forEach((row: ONetCareer) => { if(row.not_relevant === "Y") numMastery -= 1; }); 
+        
+        // Append results
         careerResults.push(...data["row"]);
       }
     }
 
-    console.log(careerResults);
     // Deduplicate results and count the occurences of each career
-    let numMastery = highestRatings.size;
     const mapCareer = new Map<string, { count: number, data: ONetCareer }>();
     for (const row of careerResults) {
       if (mapCareer.has(row["title"])) {
@@ -85,10 +89,10 @@ async function careerResults(req: Request): Promise<Response> {
       }
     }
 
-    console.log(`careers: ${mapCareer}`);
+    // console.log("Career results:", mapCareer);
 
-    numMastery -= 15; // TEST
     // Remove map entries with count < numMastery
+    console.log("Strictness:", numMastery);
     const filteredCareerResults = Array.from(mapCareer.entries())
       .filter(([_, value]) => value.count >= numMastery)
       .map(([_, value]) => {
@@ -96,7 +100,7 @@ async function careerResults(req: Request): Promise<Response> {
         return data;
       });
 
-    console.log(filteredCareerResults);
+    // console.log(filteredCareerResults);
     return new Response(
       JSON.stringify({ results: filteredCareerResults }),
       { headers: { "Content-Type": "application/json" } },
