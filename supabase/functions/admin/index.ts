@@ -86,15 +86,18 @@ Deno.serve(async (req) => {
       return { statusCode: 200, body: JSON.stringify(data) };
     }
 import "jsr:@supabase/functions-js/edge-runtime.d.ts"
+import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { serveCors } from "../_shared/cors.ts";
-import { databaseBackup } from "./backup.ts";
+import { databaseBackup, databaseRestore } from "./backup.ts";
 
 async function handleBackup(req: Request): Promise<Response> {
   const method = req.method
   switch(method) {
     case "GET":
-      return databaseBackup()
+      return databaseBackup();
+    
     case "POST":
+      return databaseRestore(await req.json());
 
     default:
       return new Response("Method not found", { status: 405 })

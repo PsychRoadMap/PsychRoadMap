@@ -1,21 +1,41 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts"
 import { createClient } from "jsr:@supabase/supabase-js@2";
 
-// const DB_TABLES = [ "Course", "Mastery", "Develops" ]
+const DB_TABLES = [ "Course", "Mastery", "Develops" ];
 
-export function databaseBackup() {
+export async function databaseBackup(): Promise<Response> {
     const supabase = createClient(
         Deno.env.get("SUPABASE_URL") ?? "",
         Deno.env.get("SUPABASE_ANON_KEY") ?? "",
     );
-    
-    const { data, error } = supabase.from("Course").select("*");
-    
-    if(error) {
-        console.log(error);
-        throw error
-    }
 
-    console.log(JSON.stringify(data));
-    return new Response(JSON.stringify(data));
+    const backup = {};
+    for(const dbName of DB_TABLES) {
+        console.log(`Adding backup for table ${dbName}`);
+        
+        const { data, error } = await supabase.from(dbName).select("*");
+
+        if(error) {
+            console.log(error);
+            throw error;
+        }
+
+        Object.assign(backup, {[dbName]: data});
+    }
+    
+    return new Response(JSON.stringify(backup));
+}
+
+export async function databaseRestore(backup: any): Promise<Response> {
+    const supabase = createClient(
+        Deno.env.get("SUPABASE_URL") ?? "",
+        Deno.env.get("SUPABASE_ANON_KEY") ?? "",
+    );
+
+    for(const [dbName, db] of backup) {
+        console.log(dbName);
+        console.log(db);
+    }
+    
+    return new Response(JSON.stringify({}));
 }
