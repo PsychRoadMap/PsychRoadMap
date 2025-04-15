@@ -16,6 +16,7 @@ export function serveCors(callback: edgeFunction) {
       return new Response("ok", { headers: corsHeaders });
     }
 
+    
     // Append CORS values to the response headers
     let resp: Response = await callback(req);
     for (let [key, value] of Object.entries(corsHeaders)) {

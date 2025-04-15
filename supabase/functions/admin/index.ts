@@ -85,7 +85,21 @@ Deno.serve(async (req) => {
       }
       return { statusCode: 200, body: JSON.stringify(data) };
     }
+import "jsr:@supabase/functions-js/edge-runtime.d.ts"
+import { serveCors } from "../_shared/cors.ts";
+import { databaseBackup } from "./backup.ts";
+
+async function handleBackup(req: Request): Promise<Response> {
+  const method = req.method
+  switch(method) {
+    case "GET":
+      return databaseBackup()
+    case "POST":
+
+    default:
+      return new Response("Method not found", { status: 405 })
   }
+}
 
   // Route: /admin/mastery
   else if (path.startsWith("/admin/mastery")) {
@@ -218,15 +232,42 @@ Deno.serve(async (req) => {
 
   return { statusCode: 404, body: JSON.stringify({ error: "Not Found" }) };
 });
+async function handleCourse(req: Request): Promise<Response> {
+  return new Response("TODO", { status: 500 });
+}
 
-/* To invoke locally:
+async function handleSubRoutes(req: Request): Promise<Response> {
+  const url = new URL(req.url);
+  const command = url.pathname.split('/').pop();
 
-  1. Run `supabase start` (see: https://supabase.com/docs/reference/cli/supabase-start)
-  2. Make an HTTP request:
+  try {
+    switch(command) {
+      case "backup":
+        return handleBackup(req);
+      case "course":
+        return handleCourse(req);
+      default:
+        return new Response(`REST route not found ${command}`, { status: 404 })
+    }
+  } catch (e) {
+    return new Response(`Internal server error: ${e}`, { status: 500 });
+  }
+}
 
-  curl -i --location --request POST 'http://127.0.0.1:54321/functions/v1/admin' \
-    --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0' \
-    --header 'Content-Type: application/json' \
-    --data '{"name":"Functions"}'
+serveCors(handleSubRoutes)
 
-*/
+// import { createClient } from 'jsr:@supabase/supabase-js@2'
+
+// Deno.serve(async (req: Request) => {
+
+//   const supabaseClient = createClient(
+//     Deno.env.get('SUPABASE_URL') ?? '',
+//     Deno.env.get('SUPABASE_ANON_KEY') ?? '',
+//   );
+
+//   // Get the session or user object
+//   const authHeader = req.headers.get('Authorization')!;
+//   const token = authHeader.replace('Bearer ', '');
+//   const { data } = await supabaseClient.auth.getUser(token);
+//   const user = data.user
+// })
