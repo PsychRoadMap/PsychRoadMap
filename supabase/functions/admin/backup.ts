@@ -1,19 +1,14 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts"
-import { createClient } from "jsr:@supabase/supabase-js@2";
+import { anonClient } from "../_shared/supabase.ts";
 
 const DB_TABLES = [ "Course", "Mastery", "Develops" ];
 
 export async function databaseBackup(): Promise<Response> {
-    const supabase = createClient(
-        Deno.env.get("SUPABASE_URL") ?? "",
-        Deno.env.get("SUPABASE_ANON_KEY") ?? "",
-    );
-
     const backup = {};
     for(const dbName of DB_TABLES) {
         console.log(`Adding backup for table ${dbName}`);
         
-        const { data, error } = await supabase.from(dbName).select("*");
+        const { data, error } = await anonClient.from(dbName).select("*");
 
         if(error) {
             console.log(error);
@@ -27,10 +22,10 @@ export async function databaseBackup(): Promise<Response> {
 }
 
 export async function databaseRestore(backup: any): Promise<Response> {
-    const supabase = createClient(
-        Deno.env.get("SUPABASE_URL") ?? "",
-        Deno.env.get("SUPABASE_ANON_KEY") ?? "",
-    );
+    // const supabase = createClient(
+    //     Deno.env.get("SUPABASE_URL") ?? "",
+    //     Deno.env.get("SUPABASE_ANON_KEY") ?? "",
+    // );
 
     for(const [dbName, db] of backup) {
         console.log(dbName);
