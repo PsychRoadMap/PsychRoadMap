@@ -1,0 +1,17 @@
+{
+    "course_name": "TEST",
+    "course_description": "TEST",
+    "course_cluster": "TEST",
+    "mastery_ratings": {
+        "TEST_DOMAIN": {
+            "TEST_SKILL": 90,
+            "TEST_SKILL2": 90,
+            "TEST_SKILL3": 90
+        },
+        "TEST_DOMAIN2": {
+            "TEST_SKILL": 90,
+            "TEST_SKILL2": 90,
+            "TEST_SKILL3": 90
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import { anonClient } from "../_shared/supabase.ts";
 
 const COURSE_TABLE = "Course";
+const MASTERY_TABLE = "Mastery";
 const DEVELOPS_TABLE = "Develops";
 
 type MasteryParam = { [domain: string]: { [mastery: string]: number } } 
@@ -40,43 +41,39 @@ export async function createCourse(req: Request, department: string, course_code
     const { course_name, course_description, course_cluster, mastery_ratings }: CreateParam = await req.json();
 
     // Insert new course
-    const { data: _data, error } = await anonClient
+    const { data: _data, courseError } = await anonClient
     .from(COURSE_TABLE)
     .insert({
         department: department, 
         course_code: course_code, 
         course_name: course_name, 
         course_description: course_description, 
-        course_cluter: course_cluster 
+        course_cluster: course_cluster 
     });
 
-    if (error) {
-        throw error
+    if (courseError) {
+        throw courseError
     }
 
     for(const [domain, ratings] of Object.entries(mastery_ratings)) {
-       console.log(domain) 
-       console.log(ratings) 
+        for(const [mastery, rating] of Object.entries(ratings)) {
+            const { data: _data, masteryError } = await anonClient
+                .from(MASTERY_TABLE)
+                .insert({mastery_domain: domain, mastery_name: mastery});
+            if(masteryError) {
+                throw masteryError
+            }
+            
+            const calculatedScore = (rating / 100) * 7; // Calculate the score
+
+            // Insert new develops entry
+            const { data, error } = await anonClient
+                .from(DEVELOPS_TABLE)
+                .insert([{ department, course_code, mastery_name, mastery_domain, lv_rating: calculatedScore }]);
+        }
     }
-
-    // const { mastery_name, mastery_domain } = await req.json();
-
-    // // Insert new mastery
-    // const { data, error } = await supabase
-    //     .from('mastery')
-    //     .insert([{ mastery_name, mastery_domain }]);
-
-    // if (error) {
-    //     return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
-    // }
-    // return { statusCode: 201, body: JSON.stringify(data) };
     // const { lv_rating, department, course_code, mastery_name, mastery_domain } = await req.json();
-    // const calculatedScore = (lv_rating / 100) * 7; // Calculate the score
 
-    // // Insert new develops entry
-    // const { data, error } = await supabase
-    //     .from('develops')
-    //     .insert([{ department, course_code, mastery_name, mastery_domain, lv_rating: calculatedScore }]);
 
     // if (error) {
     //     return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
