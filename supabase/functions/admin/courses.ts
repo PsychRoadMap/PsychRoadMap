@@ -4,7 +4,7 @@ const COURSE_TABLE = "Course";
 const MASTERY_TABLE = "Mastery";
 const DEVELOPS_TABLE = "Develops";
 
-type MasteryParam = { [domain: string]: { [mastery: string]: number } } 
+type MasteryParam = { [domain: string]: { [mastery: string]: number } }
 
 export async function getCourse(_req: Request, department: string, course_code: number): Promise<Response> {
     // Get course details
@@ -41,130 +41,125 @@ export async function createCourse(req: Request, department: string, course_code
     const { course_name, course_description, course_cluster, mastery_ratings }: CreateParam = await req.json();
 
     // Insert new course
-    const { data: _data, courseError } = await anonClient
-    .from(COURSE_TABLE)
-    .insert({
-        department: department, 
-        course_code: course_code, 
-        course_name: course_name, 
-        course_description: course_description, 
-        course_cluster: course_cluster 
-    });
+    const { data: _dataCourse, courseError } = await anonClient
+        .from(COURSE_TABLE)
+        .insert({
+            department: department,
+            course_code: course_code,
+            course_name: course_name,
+            course_description: course_description,
+            course_cluster: course_cluster
+        });
 
     if (courseError) {
         throw courseError
     }
 
-    for(const [domain, ratings] of Object.entries(mastery_ratings)) {
-        for(const [mastery, rating] of Object.entries(ratings)) {
-            const { data: _data, masteryError } = await anonClient
+    for (const [domain, ratings] of Object.entries(mastery_ratings)) {
+        for (const [mastery, rating] of Object.entries(ratings)) {
+            const { data: _dataMastery, masteryError } = await anonClient
                 .from(MASTERY_TABLE)
-                .insert({mastery_domain: domain, mastery_name: mastery});
-            if(masteryError) {
+                .insert({ mastery_domain: domain, mastery_name: mastery });
+
+            if (masteryError) {
                 throw masteryError
             }
-            
+
             const calculatedScore = (rating / 100) * 7; // Calculate the score
 
             // Insert new develops entry
-            const { data, error } = await anonClient
+            const { data: _dataDevelops, developsError } = await anonClient
                 .from(DEVELOPS_TABLE)
-                .insert([{ department, course_code, mastery_name, mastery_domain, lv_rating: calculatedScore }]);
+                .insert({
+                    department: department,
+                    course_code: course_code,
+                    mastery_domain: domain,
+                    mastery_name: mastery,
+                    lv_rating: calculatedScore
+                });
+
+            if (developsError) {
+                throw developsError
+            }
         }
     }
-    // const { lv_rating, department, course_code, mastery_name, mastery_domain } = await req.json();
 
-
-    // if (error) {
-    //     return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
-    // }
-    // return { statusCode: 201, body: JSON.stringify(data) };
-    return new Response("TODO", { status: 500 });
+    return new Response("Success", { status: 200 });
 }
 
 export async function updateCourse(req: Request, department: string, course_code: number): Promise<Response> {
+    type UpdateParam = { course_name: string, course_description: string, course_cluster: string, mastery_ratings: MasteryParam }
+    const { course_name, course_description, course_cluster, mastery_ratings }: UpdateParam = await req.json();
 
-    // const { course_name, course_description, course_cluster, department, course_code } = await req.json();
+    // Insert new course
+    const { data: _dataCourse, courseError } = await anonClient
+        .from(COURSE_TABLE)
+        .update({
+            course_name: course_name,
+            course_description: course_description,
+            course_cluster: course_cluster
+        }).match({ department, course_code });
 
-    // // Update existing course
-    // const { data, error } = await supabase
-    //     .from('courses')
-    //     .update({ course_name, course_description, course_cluster })
-    //     .match({ department, course_code });
+    if (courseError) {
+        throw courseError
+    }
 
-    // if (error) {
-    //     return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
-    // }
-    // return { statusCode: 200, body: JSON.stringify(data) };
+    for (const [domain, ratings] of Object.entries(mastery_ratings)) {
+        for (const [mastery, rating] of Object.entries(ratings)) {
+            const { data: _dataMastery, masteryError } = await anonClient
+                .from(MASTERY_TABLE)
+                .insert({ mastery_domain: domain, mastery_name: mastery });
 
-    return new Response("TODO", { status: 500 });
-    // const { mastery_name, mastery_domain } = await req.json();
+            if (masteryError) {
+                throw masteryError
+            }
 
-    // // Update existing mastery
-    // const { data, error } = await supabase
-    //     .from('mastery')
-    //     .update({ mastery_name, mastery_domain })
-    //     .match({ mastery_name, mastery_domain });
+            const calculatedScore = (rating / 100) * 7; // Calculate the score
 
-    // if (error) {
-    //     return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
-    // }
-    // return { statusCode: 200, body: JSON.stringify(data) };
-    // const { lv_rating, department, course_code, mastery_name, mastery_domain } = await req.json();
-    // const calculatedScore = (lv_rating / 100) * 7; // Recalculate the score
+            // Insert new develops entry
+            const { data: _dataDevelops, developsError } = await anonClient
+                .from(DEVELOPS_TABLE)
+                .update({
+                    lv_rating: calculatedScore
+                }).match({
+                    department,
+                    course_code,
+                    mastery_domain: domain,
+                    mastery_name: mastery
+                });
 
-    // // Update existing develops entry
-    // const { data, error } = await supabase
-    //     .from('develops')
-    //     .update({ lv_rating: calculatedScore })
-    //     .match({ department, course_code, mastery_name, mastery_domain });
+            if (developsError) {
+                throw developsError
+            }
+        }
+    }
 
-    // if (error) {
-    //     return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
-    // }
-    // return { statusCode: 200, body: JSON.stringify(data) };
-
+    return new Response("Success", { status: 200 });
 }
 
 export async function deleteCourse(req: Request, department: string, course_code: number): Promise<Response> {
+    // Insert new course
+    const { data: _dataCourse, courseError } = await anonClient
+        .from(COURSE_TABLE)
+        .delete()
+        .match({ department, course_code });
 
-    // const { department, course_code } = await req.json();
+    if (courseError) {
+        throw courseError
+    }
 
-    // // Delete course
-    // const { error } = await supabase
-    //     .from('courses')
-    //     .delete()
-    //     .match({ department, course_code });
+    // Insert new develops entry
+    const { data: _dataDevelops, developsError } = await anonClient
+        .from(DEVELOPS_TABLE)
+        .delte()
+        .match({
+            department,
+            course_code,
+        });
 
-    // if (error) {
-    //     return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
-    // }
-    // return { statusCode: 204, body: null };
-    return new Response("TODO", { status: 500 });
-    // const { mastery_name, mastery_domain } = await req.json();
+    if (developsError) {
+        throw developsError
+    }
 
-    // // Delete mastery
-    // const { error } = await supabase
-    //     .from('mastery')
-    //     .delete()
-    //     .match({ mastery_name, mastery_domain });
-
-    // if (error) {
-    //     return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
-    // }
-    // return { statusCode: 204, body: null };
-
-    // const { department, course_code, mastery_name, mastery_domain } = await req.json();
-
-    // // Delete develops entry
-    // const { error } = await supabase
-    //     .from('develops')
-    //     .delete()
-    //     .match({ department, course_code, mastery_name, mastery_domain });
-
-    // if (error) {
-    //     return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
-    // }
-    // return { statusCode: 204, body: null };
-
+    return new Response("Success", { status: 200 });
 }
