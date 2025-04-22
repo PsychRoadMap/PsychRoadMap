@@ -1,8 +1,16 @@
 import React from "react";
 
+import { useState, useEffect } from "react";
+
+import html2pdf from "html2pdf.js";
+
 import { Link } from "react-router-dom";
 
-function Select() {
+function Results() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <main>
@@ -19,7 +27,7 @@ function Select() {
       </div>
 
       <div className="gold">
-        .
+        <p className="period">.</p>
       </div>
 
       <div className="results flex flex-wrap justify-center">
@@ -138,16 +146,15 @@ function Select() {
           <Link to="/select" className="secondary rounded-xl lg:my-auto lg:w-150 w-60 my-5 px-5 py-20 text-4xl text-center"><b>TRY A DIFFERENT PATH</b></Link>
         </div>
         <div className="flex justify-center align-items-center lg:mt-10 flex-wrap lg:gap-8 gap-2">
-          <Link to="/results" className="secondary rounded-xl lg:my-auto lg:w-70 w-60 my-5 px-5 py-10 text-4xl text-center" onClick={() => { window.print() }}><b>EXPORT</b></Link>
+          <a className="secondary rounded-xl lg:my-auto lg:w-70 w-60 my-5 px-5 py-10 text-4xl text-center" onClick={() => { html2pdf().from(document.getElementById('body')).toContainer().save('PsychRoadMap.pdf'); }}><b>EXPORT</b></a>
           <a href="https://www.lindenwood.edu/science/social-and-behavioral-sciences/psychology-bs/" className="secondary rounded-xl lg:my-auto lg:w-70 w-60 my-5 px-5 py-10 text-4xl text-center"><b>CONTACT</b></a>
         </div>
-        <div>
-          <p className="text-center mt-3 px-3"> To save to PDF, select "Save to PDF" under "Destination" in the print settings.</p>
-        </div>
       </div>
+
+      <script src="../../node_modules/html2pdf.js/dist/html2pdf.min.js"></script>
 
     </main >
   );
 };
 
-export default Select;
+export default Results;

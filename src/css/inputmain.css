@@ -22,6 +22,10 @@ PHONE SCREEN
     background-color: #9f8d55;
   }
 
+  .gold>p.period {
+    color: #b5a36a;
+  }
+
   .secondary {
     background-color: #0B5A4E;
     color: white;
@@ -222,8 +226,8 @@ PHONE SCREEN
 
   .section {
     border: solid;
-    border-bottom: 0px;
     border-color: #E9E5D6;
+    margin-top: -3px;
     margin-left: 6vw;
     margin-right: 6vw;
     padding-left: 3vw;
@@ -232,18 +236,16 @@ PHONE SCREEN
     padding-bottom: 1vh;
   }
 
-  .section.end-section {
-    border: solid;
-    border-bottom-width: medium;
-    border-color: #E9E5D6;
-  }
-
   .section button {
     background-color: white;
   }
 
   .section button svg {
     fill: #0B5A4E;
+  }
+
+  .section button.p-5, .section div.p-5 {
+    padding: 5px;
   }
 
   .card {
@@ -281,6 +283,9 @@ PHONE SCREEN
   .mission-img {
     margin: 0vh 2vw 0vh 2vw;
     width: 40vh;
+    border: #b5a36a solid;
+    border-width: 5px;
+    border-radius: 3%;
   }
 
   .mission-img>img {
@@ -289,16 +294,10 @@ PHONE SCREEN
     border-radius: 3%;
   }
 
-  .waiting {
-    background-image: url(../assets/waiting-g.svg);
-    background-position: center center;
-    background-origin: content-box;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center right;
-    image-resolution: from-image;
-    width: 100%;
-    min-height: 55vh;
+  .spacer {
+    clear: both;
+    visibility: hidden;
+    padding-bottom: 1vw;
   }
 
   div.divide-y,
@@ -307,7 +306,49 @@ PHONE SCREEN
     border: 0px;
   }
 
+  .select-text p.no-m {
+    color: darkred;
+  }
+
+  .listBox {
+    background-image: none;
+    height: 50vh;
+  }
+
+  select[multiple]:focus {
+    box-shadow: none;
+    border-color: #0B5A4E;
+  }
+
+  select[multiple] option {
+    border: solid lightgray;
+    border-width: 2px;
+    margin-top: -2px;
+  }
+
+  select[multiple]:focus option:checked {
+    background: #0B5A4E linear-gradient(0deg, #0B5A4E 0%, #0B5A4E 100%);
+  }
+
+  .bundle .flex {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .bundle.big .flex {
+    width: 400px;
+  }
+
+  .bundle .flex label {
+    font-size: small;
+  }
+
+  .max-w-7xl {
+    max-width: 80rem;
+  }
+
   footer {
+    position: relative;
     background-color: #1D1D1D;
     min-height: 3vh;
     border-top: solid #0B5A4E;
@@ -317,6 +358,93 @@ PHONE SCREEN
   footer a {
     color: gray;
   }
+
+  @media (prefers-color-scheme: dark) {
+    label, h3 {
+      color: black;
+    }
+    input, textarea {
+      color: black;
+      border-color: #D1D5D8;
+    }
+  }
+
+  .html2pdf__container {
+
+    body {
+      height: 85vh;
+    }
+
+    html,
+    html p,
+    body,
+    main,
+    .results {
+      color: black;
+      background-color: white;
+    }
+
+    #mobile-menu-2,
+    .jumbito,
+    .text-gray-500,
+    .gold,
+    .button,
+    footer {
+      display: none;
+      background-color: white;
+    }
+
+    header {
+      min-height: 3vh;
+      border-bottom: solid #b5a36a;
+      border-bottom-width: 1rem;
+      background-color: white;
+    }
+
+    nav {
+      min-height: 3vh;
+      border-bottom: solid #1D1D1D;
+      border-bottom-width: 1rem;
+      background-color: white;
+    }
+
+    .results {
+      margin: 0px;
+      background-color: white;
+    }
+
+    .card {
+      border: solid;
+      border-color: black;
+      max-width: 240px;
+      min-width: 240px;
+      margin: 10px 0px 0px 0px;
+    }
+
+    .card>.card-title,
+    .card-title>p {
+      font-size: .8rem;
+      font-weight: bold;
+      text-align: left;
+      padding: 5px;
+      background-color: white;
+    }
+
+    .card>.card-title {
+      border-bottom: solid #1D1D1D;
+      border-bottom-width: .2rem;
+    }
+
+    .card>.card-job {
+      font-size: 1rem;
+      border-bottom: solid #1D1D1D;
+      border-bottom-width: .1rem;
+      background-color: white;
+      font-size: .7rem;
+    }
+
+  }
+
 
 }
 
@@ -353,6 +481,8 @@ COMPUTER SCREEN
     min-width: 8vw;
     max-width: 11vw;
     font-size: 1.3rem;
+    padding-left: 1vw;
+    padding-right: 1vw;
   }
 
   li>a {
@@ -488,6 +618,11 @@ COMPUTER SCREEN
 
   .card {
     max-width: 15vw;
+  }
+
+  .select-text p.no-m {
+    margin-left: 0;
+    color: darkred;
   }
 
 }
